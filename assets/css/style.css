@@ -1,0 +1,44 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.img-0, .img-1, .img-2, .img-3{
+    position:relative;
+    opacity:1;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+  }
+
+  .img-0{
+    background-image:url('../images/20150109_164920.jpg');
+    min-height:400px;
+  }
+  
+  .img-1{
+    background-image:url('../images/IMG_0419.jpg');
+    min-height:400px;
+  }
+  
+  .img-2{
+    background-image:url('../images/IMG_0430.jpg');
+    min-height:400px;
+  }
+  
+  .img-3{
+    background-image:url('../images/IMG_0435.jpg');
+    min-height:400px;
+  }
