@@ -1,21 +1,24 @@
 var slideIndex = 1;
-showSlides(slideIndex);
+var website = "website";
+var logo = "logo";
+showSlides(slideIndex, website);
+showSlides(slideIndex, logo);
 
 // Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusSlides(n, type) {
+  showSlides(slideIndex += n, type);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentSlide(n, type) {
+  showSlides(slideIndex = n, type);
 }
 
-function showSlides(n) {
+function showSlides(n, type) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
+  var slides = document.getElementsByClassName(type + "-mySlides");
+  var dots = document.getElementsByClassName(type + "-demo");
+  var captionText = document.getElementById(type + "-caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {

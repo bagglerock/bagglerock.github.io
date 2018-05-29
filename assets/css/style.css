@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #666;
+}
+
 body,
 html {
     height: 100%;
@@ -14,9 +18,9 @@ html {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 60px;
   color: white;
-  font-family: 'Pridi', serif;
+  font-family: 'Poiret One', cursive;
 }
 
 h3 {
@@ -77,21 +81,36 @@ h3 {
   grid-template-columns: 1fr 1fr;
 }
 
+.hero-left {
+  padding: 25px;
+  display: grid;
+  grid-template-rows: 1fr 10fr;
+}
+
 .hero-right {
-  background-color: rgba(78, 78, 78, .3)
+  padding: 25px;
+  background-color: rgba(78, 78, 78, .5);
 }
 
 #name {
-  position: relative;
-  top: 60vh;
-  left: 10vh;
+  border-bottom: solid white 1px;
+}
+
+#name > h1{
+  font-size: 70px;
+  font-family: 'Poiret One', cursive;
+  color: lightblue;
 }
 
 #quote {
   position: relative;
-  top: 30vh;
-  left: 10vh;
-  width: 50vh;
+  top: 90vh;
+}
+
+#quote > h3 {
+  background-color: rgba(78, 78, 78, .5);
+  color: lightblue;
+  text-align: right;
 }
 
 #section-websites-main, #section-logos-main, #section-skills-main{
@@ -100,10 +119,12 @@ h3 {
 
 #section-websites-main {
   background-color: midnightblue;
+  padding: 40px;
 }
 
 #section-logos-main {
   background-color: darkorange;
+  padding: 40px;
 }
 
 #section-skills-main {
@@ -113,10 +134,25 @@ h3 {
 .footer {
   background-color: black;
   color: white;
+  height: 500px;
+  text-align: center;
 }
 
-.contact-info {
+.contact-info > ul > li {
+  color: lightblue;
+  padding-top: 15px;
+}
+
+.contact-info > ul > li > a{
   color: white;
+  text-decoration: none;
+  padding: 0;
+}
+
+.contact-info > ul > li > a:hover{
+  color: yellow;
+  text-decoration: none;
+  padding: 0;
 }
 
 
@@ -126,7 +162,6 @@ h3 {
 .gallery-container {
   position: relative;
   text-align: center;
-  padding: 10px;
 }
 
 /* Hide the images by default */
