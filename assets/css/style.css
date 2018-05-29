@@ -118,29 +118,39 @@ h3 {
 }
 
 #section-websites-main {
-  background-color: darkorange;
+  background-color: rgb(255, 140, 0, .5);
   padding: 40px;
 }
 
 #section-logos-main {
-  background-color: rgb(92, 47, 10);
+  background-color: rgb(92, 47, 10, .5);
   padding: 40px;
 }
 
 #section-skills-main {
-  background-color:midnightblue;
+  background-color:rgba(25, 25, 112, .5);
   display: grid;
-  grid-template-rows: auto auto;
-  padding: 50px;
+  grid-template-columns: 3fr 1fr 1fr;
+  padding: 100px;
+}
+
+#section-skills-main > div {
+  box-sizing: border-box;
+  padding: 100px 75px;
+  border-top: solid white 1px;
+  border-bottom: solid white 1px;
 }
 
 .dark-header {
   color: black;
 }
 
-#skills-list {
+#personal-summary > p {
+  font-size: 20px;
+}
+
+.skills-list {
   list-style-type: square;
-  
 
 }
 
@@ -149,14 +159,15 @@ h3 {
   color: white;
   height: 500px;
   text-align: center;
+  padding-top: 150px;
 }
 
-.contact-info > ul > li {
+.contact-info > ul > li , .footer > ul > li {
   color: rgb(1, 180, 235);
   padding-top: 15px;
 }
 
-.contact-info > ul > li > a{
+.contact-info > ul > li > a, .footer > ul > li > a{
   color: white;
   text-decoration: none;
   padding: 0;
@@ -164,6 +175,12 @@ h3 {
 
 .contact-info > ul > li > a:hover{
   color: orange;
+  text-decoration: none;
+  padding: 0;
+}
+
+.footer > ul > li > a:hover{
+  color: pink;
   text-decoration: none;
   padding: 0;
 }
