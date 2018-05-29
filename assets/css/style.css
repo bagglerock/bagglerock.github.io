@@ -186,6 +186,10 @@ h3 {
   height: 50vh;
   border-radius: 5px;
 }
+.mySlides > a > img {
+  height: 50vh;
+  border-radius: 5px;
+}
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
