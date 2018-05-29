@@ -78,12 +78,12 @@
 
                 <div class="website-mySlides mySlides">
                     <div class="numbertext">3 / 6</div>
-                    <img src="./assets/images/websites/hangman.png">
+                    <img src="./assets/images/websites/knockout.png">
                 </div>
 
                 <div class="website-mySlides mySlides">
                     <div class="numbertext">4 / 6</div>
-                    <img src="./assets/images/websites/knockout.png">
+                    <img src="./assets/images/websites/hangman.png">
                 </div>
 
                 <div class="website-mySlides mySlides">
@@ -106,23 +106,24 @@
                 </div>
 
                 <!-- Thumbnail images -->
-                <div class="row">
-                    <div class="column">
+                <div class="website-thumbnails">
+                    <div class="website-column">
                         <img class="website-demo demo cursor" src="./assets/images/websites/chefsden.png" onclick="currentSlide(1 , 'website')" alt="Chefs Den">
                     </div>
-                    <div class="column">
-                        <img class="website-demo demo cursor" src="./assets/images/websites/freight-sys.png" onclick="currentSlide(2 , 'website')" alt="Freight-Sys NJ">
+                    <div class="website-column">
+                        <img class="website-demo demo cursor" src="./assets/images/websites/freight-sys.png" onclick="currentSlide(2 , 'website')"
+                            alt="Freight-Sys NJ">
                     </div>
-                    <div class="column">
-                        <img class="website-demo demo cursor" src="./assets/images/websites/hangman.png" onclick="currentSlide(3 , 'website')" alt="Hangman">
+                    <div class="website-column">
+                        <img class="website-demo demo cursor" src="./assets/images/websites/knockout.png" onclick="currentSlide(3 , 'website')" alt="Knockout Fitness Muay Thai">
                     </div>
-                    <div class="column">
-                        <img class="website-demo demo cursor" src="./assets/images/websites/knockout.png" onclick="currentSlide(4 , 'website')" alt="Knockout Fitness Muay Thai">
+                    <div class="website-column">
+                        <img class="website-demo demo cursor" src="./assets/images/websites/hangman.png" onclick="currentSlide(4 , 'website')" alt="Hangman">
                     </div>
-                    <div class="column">
+                    <div class="website-column">
                         <img class="website-demo demo cursor" src="./assets/images/websites/rps.png" onclick="currentSlide(5 , 'website')" alt="RPS">
                     </div>
-                    <div class="column">
+                    <div class="website-column">
                         <img class="website-demo demo cursor" src="./assets/images/websites/trivia.png" onclick="currentSlide(6 , 'website')" alt="Trivia">
                     </div>
                 </div>
@@ -131,7 +132,7 @@
 
         <div class="container container__small section-header" id="section-logos-header">
             <div>
-                <h1>Logos</h1>
+                <h1 class="dark-header">Logos</h1>
             </div>
             <div class="parallax" data-parallax-image="./assets/images/parallax/IMG_0291.jpg"></div>
         </div>
@@ -149,7 +150,7 @@
 
                 <div class="logo-mySlides mySlides">
                     <div class="numbertext">2 / 4</div>
-                    <img src="./assets/images/logos/jam.jpg">
+                    <img src="./assets/images/logos/jam.png">
                 </div>
 
                 <div class="logo-mySlides mySlides">
@@ -172,18 +173,22 @@
                 </div>
 
                 <!-- Thumbnail images -->
-                <div class="row">
-                    <div class="column">
-                        <img class="logo-demo demo cursor" src="./assets/images/logos/daves_logo_lighter.png" style="width:100%" onclick="currentSlide(1 , 'logo')" alt="Chefs Den">
+                <div class="logo-thumbnails">
+                    <div class="logo-column">
+                        <img class="logo-demo demo cursor" src="./assets/images/logos/daves_logo_lighter.png" style="width:100%" onclick="currentSlide(1 , 'logo')"
+                            alt="Chefs Den">
                     </div>
-                    <div class="column">
-                        <img class="logo-demo demo cursor" src="./assets/images/logos/jam.jpg" style="width:100%" onclick="currentSlide(2 , 'logo')" alt="Freight-Sys NJ">
+                    <div class="logo-column">
+                        <img class="logo-demo demo cursor" src="./assets/images/logos/jam.png" style="width:100%" onclick="currentSlide(2 , 'logo')"
+                            alt="Freight-Sys NJ">
                     </div>
-                    <div class="column">
-                        <img class="logo-demo demo cursor" src="./assets/images/logos/Material Memories.jpg" style="width:100%" onclick="currentSlide(3 , 'logo')" alt="Hangman">
+                    <div class="logo-column">
+                        <img class="logo-demo demo cursor" src="./assets/images/logos/Material Memories.jpg" style="width:100%" onclick="currentSlide(3 , 'logo')"
+                            alt="Hangman">
                     </div>
-                    <div class="column">
-                        <img class="logo-demo demo cursor" src="./assets/images/logos/rhe.png" style="width:100%" onclick="currentSlide(4 , 'logo')" alt="Knockout Fitness Muay Thai">
+                    <div class="logo-column">
+                        <img class="logo-demo demo cursor" src="./assets/images/logos/rhe.png" style="width:100%" onclick="currentSlide(4 , 'logo')"
+                            alt="Knockout Fitness Muay Thai">
                     </div>
                 </div>
             </div>
@@ -191,21 +196,30 @@
 
         <div class="container container__small section-header" id="section-skills-header">
             <div>
-                <h1>Skills</h1>
+                <h1 class="dark-header">Skills</h1>
             </div>
             <div class="parallax" data-parallax-image="./assets/images/parallax/IMG_0406.jpg"></div>
         </div>
 
         <div class="container__big" id="section-skills-main">
-            <ul>
-                <li>Node.js</li>
-                <li>Javascript</li>
-                <li>PHP</li>
-                <li>jQuery</li>
-                <li>MySQL</li>
-                <li>Adobe Illustrator</li>
-                <li>Adobe Photoshop</li>
-            </ul>
+            <div id="personal-summary">
+                <p>Creative and enterprising Full Stack Web Developer with 15+ years’ experience in running businesses in the
+                    retail industry. Seeking to use my background in planning and implementation of systems to take the role
+                    of a Web Developer. I am self-reliant and effective at developing methods to make your company more efficient.</p>
+            </div>
+            <div>
+                <h3>Skills:</h3>
+                <ul id="skills-list">
+                    <li>Node.js</li>
+                    <li>Javascript</li>
+                    <li>PHP</li>
+                    <li>jQuery</li>
+                    <li>MySQL</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Photoshop</li>
+                </ul>
+            </div>
+
         </div>
 
         <div class="container container__small section-header">

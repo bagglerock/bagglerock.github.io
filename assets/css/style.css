@@ -82,14 +82,14 @@ h3 {
 }
 
 .hero-left {
-  padding: 25px;
+  padding: 35px;
   display: grid;
   grid-template-rows: 1fr 10fr;
 }
 
 .hero-right {
   padding: 25px;
-  background-color: rgba(78, 78, 78, .5);
+  background-color: rgba(78, 78, 78, .2);
 }
 
 #name {
@@ -118,17 +118,30 @@ h3 {
 }
 
 #section-websites-main {
-  background-color: midnightblue;
+  background-color: darkorange;
   padding: 40px;
 }
 
 #section-logos-main {
-  background-color: darkorange;
+  background-color: midnightblue;
   padding: 40px;
 }
 
 #section-skills-main {
   background-color:rgb(16, 61, 112);
+  display: grid;
+  grid-template-rows: auto auto;
+  padding: 50px;
+}
+
+.dark-header {
+  color: black;
+}
+
+#skills-list {
+  list-style-type: square;
+  
+
 }
 
 .footer {
@@ -230,16 +243,6 @@ h3 {
   clear: both;
 }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-.column > img {
-  height: 15vh;
-  border-radius: 5px;
-}
 
 /* Add a transparency effect for thumnbail images */
 .demo {
@@ -249,4 +252,19 @@ h3 {
 .active,
 .demo:hover {
   opacity: 1;
+}
+
+.website-thumbnails, .logo-thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.website-column, .logo-column{
+  padding: 0 5px;
+}
+
+.website-column > img, .logo-column > img {
+  max-height: 15vh;
+  border-radius: 5px;
+
 }
