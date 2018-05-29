@@ -99,7 +99,7 @@ h3 {
 #name > h1{
   font-size: 70px;
   font-family: 'Poiret One', cursive;
-  color: lightblue;
+  color: rgb(1, 180, 235);
 }
 
 #quote {
@@ -109,7 +109,7 @@ h3 {
 
 #quote > h3 {
   background-color: rgba(78, 78, 78, .5);
-  color: lightblue;
+  color: rgb(1, 180, 235);
   text-align: right;
 }
 
@@ -152,7 +152,7 @@ h3 {
 }
 
 .contact-info > ul > li {
-  color: lightblue;
+  color: rgb(1, 180, 235);
   padding-top: 15px;
 }
 
@@ -163,7 +163,7 @@ h3 {
 }
 
 .contact-info > ul > li > a:hover{
-  color: yellow;
+  color: orange;
   text-decoration: none;
   padding: 0;
 }
