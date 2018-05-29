@@ -123,12 +123,12 @@ h3 {
 }
 
 #section-logos-main {
-  background-color: midnightblue;
+  background-color: rgb(92, 47, 10);
   padding: 40px;
 }
 
 #section-skills-main {
-  background-color:rgb(16, 61, 112);
+  background-color:midnightblue;
   display: grid;
   grid-template-rows: auto auto;
   padding: 50px;
@@ -254,9 +254,14 @@ h3 {
   opacity: 1;
 }
 
-.website-thumbnails, .logo-thumbnails {
+.website-thumbnails{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.logo-thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .website-column, .logo-column{
@@ -265,6 +270,7 @@ h3 {
 
 .website-column > img, .logo-column > img {
   max-height: 15vh;
+  max-width: 15vh;
   border-radius: 5px;
 
 }
