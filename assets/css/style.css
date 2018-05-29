@@ -1,6 +1,5 @@
-
 *, :after, :before {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body,
@@ -15,8 +14,9 @@ html {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 80px;
   color: white;
+  font-family: 'Pridi', serif;
 }
 
 h3 {
@@ -54,39 +54,61 @@ h3 {
   }
 }
 
-.container__huge {
-	height: 175vh;
+.container__hero {
+  height: 100vh;
 }
 
 .container__big {
-	height: 100vh;
+	height: 80vh;
 }
 
 .container__small {
 	height: 40vh;
 }
 
-.container__random {
-	height: 452px;
-}
-
 .section-header {
   color: white;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+#section-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-right {
+  background-color: rgba(78, 78, 78, .3)
+}
+
+#name {
+  position: relative;
+  top: 60vh;
+  left: 10vh;
+}
+
+#quote {
+  position: relative;
+  top: 30vh;
+  left: 10vh;
+  width: 50vh;
+}
+
+#section-websites-main, #section-logos-main, #section-skills-main{
+  color: white;
+  padding: 100px;
 }
 
 #section-websites-main {
   background-color: midnightblue;
-  color: white;
 }
 
 #section-logos-main {
   background-color: darkorange;
-  color: white;
 }
 
 #section-skills-main {
   background-color:rgb(16, 61, 112);
-  color: white;
 }
 
 .footer {
