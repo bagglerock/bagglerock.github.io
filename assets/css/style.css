@@ -411,13 +411,20 @@ h3 {
 
 @media (min-width: 600px) and (max-width: 899px) {
 
-  
+  #name > h1{
+    font-size: 60px;
+    padding: 15px 0;
+  }
 
 
 }
 
 
 @media (min-width: 900px) and (max-width: 1199px) {
+  #name > h1{
+    font-size: 60px;
+    padding: 15px 0;
+  }
   
 
 }
