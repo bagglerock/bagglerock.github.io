@@ -81,6 +81,7 @@ h3 {
   }
 }
 
+
 /* section sizes */
 
 .container__hero {
@@ -96,8 +97,6 @@ h3 {
 }
 
 /* END section sizes */
-
-
 
 
 
@@ -337,19 +336,13 @@ h3 {
     height: 25vh;
   }
 
-  .hero-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
   .hero-left {
     padding: 5px;
-    display: grid;
-    grid-template-columns: 1fr;
   }
 
   .hero-right {
     padding: 5px;
+    display: none;
   }
 
   .header {
