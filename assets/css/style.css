@@ -388,7 +388,6 @@ h3 {
   #section-skills-main {
     display: grid;
     grid-template-areas: 
-    'summary summary'
     'skills-1 skills-2';
     padding: 10px;
     font-size: 12px;
@@ -399,6 +398,9 @@ h3 {
     border: none;
   }
 
+  #personal-summary {
+    display: none;
+  }
   #personal-summary > p {
     font-size: 12px;
   }
