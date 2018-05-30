@@ -124,16 +124,16 @@ h3 {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 25px;
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .position-container {
-  position: relative;
-  grid-row: 2 / 3;
+  text-align: right;
 }
 
 .contact-info-container {
-  grid-row: 3 / 4;
+  grid-row: 1 / 2;
+  text-align: right;
 }
 
 .contact-info-container > ul > li{
@@ -156,6 +156,7 @@ h3 {
 .about-container {
   grid-row: 4 / 5;
   color: white;
+  font-weight: bold;
 }
 
 #section-websites-main, #section-logos-main, #section-skills-main{
@@ -188,14 +189,6 @@ h3 {
 .skills-list {
   list-style-type: square;
 
-}
-
-.footer {
-  background-color: black;
-  color: white;
-  height: 200px;
-  text-align: center;
-  padding-top: 40px;
 }
 
 
