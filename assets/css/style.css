@@ -24,6 +24,11 @@ h1 {
   font-family: 'Poiret One', cursive;
 }
 
+h2 {
+  font-size: 40px;
+  font-family: 'Poiret One', cursive;
+}
+
 h3 {
   font-size: 25px;
   color: white;
@@ -96,7 +101,7 @@ h3 {
 
 
 
-#hero {
+.hero-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -107,30 +112,52 @@ h3 {
   grid-template-rows: 1fr 10fr;
 }
 
-.hero-right {
-  padding: 25px;
-  background-color: rgba(78, 78, 78, .2);
+.name-container {
+  line-height: 5em;
 }
 
-#name {
-  border-bottom: solid white 1px;
-}
-
-#name > h1{
-  font-size: 70px;
-  font-family: 'Poiret One', cursive;
+.name-container > h1{
+  border-bottom: solid orange 1px;
+  font-weight: bold;
   color: rgb(1, 180, 235);
 }
 
-#quote {
-  position: relative;
-  top: 90vh;
+.hero-right {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr 3fr;
 }
 
-#quote > h3 {
-  background-color: rgba(78, 78, 78, .5);
+.position-container {
+  position: relative;
+  grid-row: 2 / 3;
+}
+
+.contact-info-container {
+  grid-row: 3 / 4;
+}
+
+.contact-info-container > ul > li{
+  color: rgb(1, 180, 235);
+  padding-top: 15px;
+}
+
+.contact-info-container > ul > li > a{
   color: white;
-  text-align: right;
+  text-decoration: none;
+  padding: 0;
+}
+
+.contact-info-container > ul > li > a:hover{
+  color: orange;
+  text-decoration: none;
+  padding: 0;
+}
+
+.about-container {
+  grid-row: 4 / 5;
+  color: white;
 }
 
 #section-websites-main, #section-logos-main, #section-skills-main{
@@ -160,10 +187,6 @@ h3 {
   border-bottom: solid white 1px;
 }
 
-#personal-summary > p {
-  font-size: 20px;
-}
-
 .skills-list {
   list-style-type: square;
 
@@ -177,28 +200,7 @@ h3 {
   padding-top: 150px;
 }
 
-.contact-info > ul > li , .footer > ul > li {
-  color: rgb(1, 180, 235);
-  padding-top: 15px;
-}
 
-.contact-info > ul > li > a, .footer > ul > li > a{
-  color: white;
-  text-decoration: none;
-  padding: 0;
-}
-
-.contact-info > ul > li > a:hover{
-  color: orange;
-  text-decoration: none;
-  padding: 0;
-}
-
-.footer > ul > li > a:hover{
-  color: orange;
-  text-decoration: none;
-  padding: 0;
-}
 
 
 /* Section for the gallery slideshow*/
@@ -407,13 +409,6 @@ h3 {
     box-sizing: border-box;
     padding: 0;
     border: none;
-  }
-
-  #personal-summary {
-    display: none;
-  }
-  #personal-summary > p {
-    font-size: 12px;
   }
 
 
