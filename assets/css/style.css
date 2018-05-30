@@ -117,7 +117,7 @@ h3 {
 }
 
 .name-container > h1{
-  border-bottom: solid orange 1px;
+  border-bottom: solid white 1px;
   font-weight: bold;
   color: rgb(1, 180, 235);
 }
@@ -337,7 +337,7 @@ h3 {
     height: 25vh;
   }
 
-  #hero {
+  .hero-wrapper {
     display: grid;
     grid-template-columns: 1fr;
   }
