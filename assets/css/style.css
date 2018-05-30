@@ -144,10 +144,6 @@ h3 {
   border-bottom: solid white 1px;
 }
 
-.dark-header {
-  color: black;
-}
-
 #personal-summary > p {
   font-size: 20px;
 }
@@ -183,7 +179,7 @@ h3 {
 }
 
 .footer > ul > li > a:hover{
-  color: pink;
+  color: orange;
   text-decoration: none;
   padding: 0;
 }
