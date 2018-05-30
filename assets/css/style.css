@@ -1,3 +1,5 @@
+/* General CSS */
+
 *, :after, :before {
   box-sizing: border-box;
 }
@@ -14,7 +16,6 @@ html {
     font-family: 'Poiret One', cursive;
     font-weight: 400;
     line-height: 1.8em;
-    color: #666;
 }
 
 h1 {
@@ -28,9 +29,24 @@ h3 {
   color: white;
 }
 
-.wrapper {
+.body-wrapper {
     display: grid;
     grid-template-columns: auto;
+}
+
+.section-header {
+  color: white;
+}
+
+.header {
+  position: relative;
+  padding: 20px;
+  margin: auto;
+  top: 40%;
+  width: 50%;
+  background-color: grey; /* Fallback */
+  background-color: rgba(128, 128, 128, .5);
+  text-align: center;
 }
 
 /* Parallax containers */
@@ -60,27 +76,27 @@ h3 {
   }
 }
 
-/* container sizes for the parallax images */
+/* section sizes */
 
 .container__hero {
   height: 100vh;
 }
 
 .container__big {
-	height: 80vh;
+	height: 100vh;
 }
 
 .container__small {
 	height: 40vh;
 }
 
-.section-header {
-  color: white;
-  text-align: center;
-  padding-top: 20vh;
-}
+/* END section sizes */
 
-#section-hero {
+
+
+
+
+#hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -308,22 +324,18 @@ h3 {
   }
 
   .container__hero {
-    height: 50vh;
+    height: 100vh;
   }
   
   .container__big {
-    height: 45vh;
+    height: 100vh;
   }
   
   .container__small {
-    height: 15vh;
+    height: 25vh;
   }
 
-  .section-header {
-    padding-top: 5vh;
-  }
-
-  #section-hero {
+  #hero {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -354,9 +366,9 @@ h3 {
     text-align: left;
   }
 
-  #section-websites-main, #section-logos-main, #section-skills-main  {
-    padding: 5px 5px;
-  }  
+  .header {
+    top: 30%;
+  }
 
   .mySlides > img {
     height: 15vh;
