@@ -155,6 +155,7 @@ h3 {
   grid-row: 4 / 5;
   color: white;
   font-weight: bold;
+  padding: 0 25px;
 }
 
 .main-section {
