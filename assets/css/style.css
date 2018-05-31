@@ -129,18 +129,18 @@ h3 {
   text-align: right;
 }
 
-.contact-info-container > ul > li{
+.contact-info > ul > li{
   color: rgb(1, 180, 235);
   padding-top: 15px;
 }
 
-.contact-info-container > ul > li > a{
+.contact-info > ul > li > a{
   color: white;
   text-decoration: none;
   padding: 0;
 }
 
-.contact-info-container > ul > li > a:hover{
+.contact-info > ul > li > a:hover{
   color: orange;
   text-decoration: none;
   padding: 0;
@@ -156,33 +156,18 @@ h3 {
   padding: 15vh 0;
 }
 
-#section-websites-main, #section-logos-main, #section-skills-main{
-  color: white;
-}
-
 #section-websites-main {
-  background-color: rgb(112, 72, 43);
+  background-color: rgb(1, 35, 73);
 }
 
 #section-logos-main {
-  background-color: rgb(102, 85, 41);
+  background-color: rgb(116, 75, 0);
 }
 
 #section-skills-main {
-  background-color:rgb(72, 73, 53);
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-}
-
-#section-skills-main > div {
-  box-sizing: border-box;
-  border-top: solid white 1px;
-  border-bottom: solid white 1px;
-}
-
-.skills-list {
-  list-style-type: square;
-
+  background-color:rgb(49, 34, 0);
+  color: white;
+  text-align: center;
 }
 
 
@@ -264,7 +249,6 @@ h3 {
   clear: both;
 }
 
-
 /* Add a transparency effect for thumnbail images */
 .demo {
   opacity: 0.6;
@@ -297,10 +281,7 @@ h3 {
 }
 
 
-
-
 /* Media Queries */ 
-
 
 @media (max-width: 599px) {
 
@@ -322,9 +303,11 @@ h3 {
   }
 
   .contact-info-container {
+    box-sizing: border-box;
     background-color: black;
     text-align: left;
     grid-row: 1/2;
+    padding: 10px;
   }
 
   .about-container {
@@ -359,22 +342,17 @@ h3 {
   .website-column > img, .logo-column > img {
     max-width: 25vw;
     border-radius: 5px;
-  
   }
 
   #section-skills-main {
-    display: grid;
-    grid-template-areas: 
-    'skills-1 skills-2';
-    padding: 10px;
-    font-size: 12px;
-  }
-  #section-skills-main > div {
-    box-sizing: border-box;
-    padding: 0;
-    border: none;
+    padding: 5vh 0;
   }
 
+  #footer-contacts {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  }
 
 }
 
