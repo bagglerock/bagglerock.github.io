@@ -338,15 +338,11 @@ h3 {
   }
 
   .header {
-    top: 30%;
+    top: 7vh;
   }
 
-  .mySlides > img {
-    height: 15vh;
-    border-radius: 5px;
-  }
-  .mySlides > a > img {
-    height: 15vh;
+  .mySlides > img, .mySlides > a > img  {
+    height: 25vh;
     border-radius: 5px;
   }
 
@@ -361,8 +357,7 @@ h3 {
   }
 
   .website-column > img, .logo-column > img {
-    max-height: 8vh;
-    max-width: 8vh;
+    max-width: 25vw;
     border-radius: 5px;
   
   }
