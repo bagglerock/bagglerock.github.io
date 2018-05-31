@@ -322,17 +322,14 @@ h3 {
     background-color: black;
   }
 
-  .hero-right {
-    grid-template-rows: 1fr 1fr;
-  }
-
   .contact-info-container {
+    background-color: black;
     text-align: left;
     grid-row: 1/2;
   }
 
   .about-container {
-    padding: 0;
+    padding: 20px 0;
     grid-row: 2/5;
   }
 
