@@ -99,7 +99,6 @@ h3 {
 /* END section sizes */
 
 
-
 .hero-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -159,25 +158,26 @@ h3 {
   font-weight: bold;
 }
 
+.main-section {
+  padding: 15vh;
+}
+
 #section-websites-main, #section-logos-main, #section-skills-main{
   color: white;
 }
 
 #section-websites-main {
   background-color: darkorange;
-  padding: 40px;
 }
 
 #section-logos-main {
   background-color: #8B4513;
-  padding: 40px;
 }
 
 #section-skills-main {
   background-color:midnightblue;
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
-  padding: 100px;
 }
 
 #section-skills-main > div {
