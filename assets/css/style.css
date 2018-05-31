@@ -45,10 +45,10 @@ h3 {
 
 .header {
   position: relative;
-  padding: 20px;
-
+  padding: 20px 0;
+  margin: auto;
   top: 40%;
-  width: 50%;
+  width: 50vw;
   background-color: grey; /* Fallback */
   background-color: rgba(128, 128, 128, .5);
   text-align: center;
@@ -154,7 +154,7 @@ h3 {
 }
 
 .main-section {
-  padding: 15vh;
+  padding: 15vh 0;
 }
 
 #section-websites-main, #section-logos-main, #section-skills-main{
