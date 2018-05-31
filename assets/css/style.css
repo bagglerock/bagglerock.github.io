@@ -328,6 +328,12 @@ h3 {
 
   .contact-info-container {
     text-align: left;
+    grid-row: 1/2;
+  }
+
+  .about-container {
+    padding: 0;
+    grid-row: 2/5;
   }
 
   .position-container {
