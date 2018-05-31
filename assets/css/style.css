@@ -422,12 +422,22 @@ h3 {
     font-size: 40px;
     padding: 15px 0;
   }
+
+  .about-container > p { 
+    line-height: 1.5em;
+    font-size: 23px;
+  }
   
 
 }
 
 
 @media (min-width: 1200px){
+
+  .about-container > p { 
+    line-height: 1.5em;
+    font-size: 28px;
+  }
 
   
 
