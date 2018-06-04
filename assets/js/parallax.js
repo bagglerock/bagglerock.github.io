@@ -26,7 +26,7 @@ var universalParallax = function () {
             className: void 0 !== e.className ? e.className : "parallax"
         };
         for (var t, a, n = document.getElementsByClassName(e.className), i = 0; n.length > i; i++) {
-            var l = document.createElement("div");
+            var l = document.createElement("section");
             n[i].parentNode.insertBefore(l, n[i]), l.appendChild(n[i]);
             var r = n[i].parentElement;
             r.className += "parallax__container", "relative" !== window.getComputedStyle(r.parentElement, null).getPropertyValue("position") && (r.parentElement.style.position = "relative");
