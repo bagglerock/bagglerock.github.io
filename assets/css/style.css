@@ -111,6 +111,11 @@ footer {
     box-shadow: 5px 10px 8px black;
     background-color: rgb(77, 72, 64);
     color: white;
+    opacity: .8;
+}
+
+.gallery>div:hover {
+    opacity: 1;
 }
 
 .webapp-name {
