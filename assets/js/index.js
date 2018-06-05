@@ -19,7 +19,7 @@ var websites = [{
         imgName: "freight-sys.jpg",
         link: "https://bagglerock.github.io/freight-sys",
         github: "https://github.com/bagglerock/freight-sys",
-        description: "site for food",
+        description: "Website for Freight Systems of NJ.  A Logistics company for your shipping needs.",
         technologies: "HTML, CSS, jQuery"
     },
     {
@@ -35,7 +35,7 @@ var websites = [{
         imgName: "rps.jpg",
         link: "https://bagglerock.github.io/RPS-Multiplayer",
         github: "https://github.com/bagglerock/RPS-Multiplayer",
-        description: "Multiplayer Rock, Paper, Scissors with chat",
+        description: "Multiplayer Rock, Paper, Scissors with chat. (Working on it currently, should be finished soon)",
         technologies: "Javascript, jQuery, Firebase, HTML, CSS"
     },
     {
