@@ -77,12 +77,13 @@ footer {
 .header-section {
     text-align: center;
     padding: 3rem 0;
+    border-bottom: solid goldenrod 1px;
 }
 
 .header-section h2 {
     display: inline-block;
-    padding: 10px 30px;
-    background-color: rgba(20, 20, 20, 0.63);
+    padding: 0;
+    /* background-color: rgba(20, 20, 20, 0.63); */
     color: goldenrod;
 }
 
@@ -109,7 +110,7 @@ footer {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 5px 10px 8px black;
-    background-color: rgb(77, 72, 64);
+    background-color: rgba(77, 72, 64, .3);
     color: white;
     opacity: .8;
 }
@@ -226,6 +227,15 @@ footer {
         grid-template-areas:
         'info-section links-section'
         'info-section headline';
+    }
+
+    .section-1 {
+        height: 50vh;
+    }
+
+    .intro-section p {
+        padding: 2rem;
+        font-size: 1.7rem;
     }
 
     .info-section {
