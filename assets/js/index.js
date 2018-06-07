@@ -1,4 +1,4 @@
-var websites = [{
+const websites = [{
         name: "Chef's Den",
         imgName: "chefsden.jpg",
         link: "https://immense-plateau-63304.herokuapp.com/",
@@ -50,7 +50,7 @@ var websites = [{
 
 
 
-var logos = [{
+const logos = [{
         name: "Smokin 55 BBQ",
         img: "daves_logo_lighter.png"
     },
@@ -68,8 +68,11 @@ var logos = [{
     },
 ];
 
-var imageLocationWebsite = "./assets/img/websites/";
-var imageLocationLogos = "./assets/img/logos/";
+
+const skills = ["Javascript", "Node.js", "Express.js", "Firebase", "MongoDB", "Ajax", "RESTful", "API's", "PHP", "jQuery", "MySQL", "HTML", "CSS", "Bootstrap", "Adobe Illustrator", "Adobe Photoshop", "Vectornator", "Git"];
+
+const imageLocationWebsite = "./assets/img/websites/";
+const imageLocationLogos = "./assets/img/logos/";
 
 
 $(document).ready(function() {
@@ -80,47 +83,47 @@ $(document).ready(function() {
         $(".headline").css("opacity", 1 - $(window).scrollTop() / 250);
       });
 
-    for (var i = 0; i <  websites.length ; i++) {
+    for (let i = 0; i <  websites.length ; i++) {
 
-        var name = websites[i].name;
-        var imgName = websites[i].imgName;
-        var link = websites[i].link;
-        var github = websites[i].github;
-        var description = websites[i].description;
-        var technologies = websites[i].technologies;
+        let name = websites[i].name;
+        let imgName = websites[i].imgName;
+        let link = websites[i].link;
+        let github = websites[i].github;
+        let description = websites[i].description;
+        let technologies = websites[i].technologies;
 
-        var mainDiv = $("<div>");
+        let mainDiv = $("<div>");
 
-        var imgDiv = $("<div>");
-        var imgTag = $("<img>");
-        var imgATag = $("<a>");
+        let imgDiv = $("<div>");
+        let imgTag = $("<img>");
+        let imgATag = $("<a>");
         imgTag.attr("src", imageLocationWebsite + imgName);
         imgATag.attr("href", link).attr("target", "_blank");
         imgATag.append(imgTag);
         imgDiv.append(imgATag);
 
-        var nameDiv = $("<div>");
-        var nameHTag = $("<h3>");
+        let nameDiv = $("<div>");
+        let nameHTag = $("<h3>");
         nameHTag.text(name);
         nameDiv.append(nameHTag).addClass("webapp-name");
 
-        var linksDiv = $("<div>");
-        var linkATag = $("<a>");
+        let linksDiv = $("<div>");
+        let linkATag = $("<a>");
         linkATag.attr("href", link).text(link).attr("target", "_blank");
         linksDiv.append(linkATag).addClass("link-div");
 
-        var gitDiv = $("<div>");
-        var gitATag = $("<a>");
+        let gitDiv = $("<div>");
+        let gitATag = $("<a>");
         gitATag.attr("href", github).text(github).attr("target", "_blank");
         gitDiv.append(gitATag).addClass("link-div");
 
-        var descriptionDiv = $("<div>");
-        var descPTag = $("<p>");
+        let descriptionDiv = $("<div>");
+        let descPTag = $("<p>");
         descPTag.text(description);
         descriptionDiv.append(descPTag).addClass("description-div");
 
-        var techDiv = $("<div>");
-        var techPTag = $("<p>");
+        let techDiv = $("<div>");
+        let techPTag = $("<p>");
         techPTag.text(technologies);
         techDiv.append(techPTag).addClass("description-div");
 
@@ -130,23 +133,20 @@ $(document).ready(function() {
 
     }
 
-    for(var i = 0; i < logos.length; i++) {
+    for(let i = 0; i < logos.length; i++) {
 
-        var mainDiv = $("<div>");
+        let mainDiv = $("<div>");
 
-        var name = logos[i].name;
-        var imgName = logos[i].img;
+        let name = logos[i].name;
+        let imgName = logos[i].img;
 
-        var imgDiv = $("<div>");
-        var imgTag = $("<img>");
-        var imgATag = $("<a>");
+        let imgDiv = $("<div>");
+        let imgTag = $("<img>");
         imgTag.attr("src", imageLocationLogos + imgName);
-        imgATag.attr("href", link).attr("target", "_blank");
-        imgATag.append(imgTag);
-        imgDiv.append(imgATag);
+        imgDiv.append(imgTag);
 
-        var nameDiv = $("<div>");
-        var nameHTag = $("<h4>");
+        let nameDiv = $("<div>");
+        let nameHTag = $("<h4>");
         nameHTag.text(name);
         nameDiv.append(nameHTag).addClass("description-div");
 
@@ -154,6 +154,14 @@ $(document).ready(function() {
         $("#logos-area").append(mainDiv);
 
 
+    }
+
+    for (let i = 0; i < skills.length; i++){
+        let ulTag = $("<ul>");
+        let liTag = $("<li>");
+        liTag.text(skills[i]);
+        ulTag.append(liTag);
+        $("#skills-area").append(ulTag);
     }
 
 
