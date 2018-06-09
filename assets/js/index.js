@@ -45,6 +45,13 @@ const websites = [{
         github: "https://github.com/bagglerock/TriviaGame",
         description: "Trivia Game where I couldn't think of any questions, so I just made odd questions and answers",
         technologies: "Javascript, jQuery, HTML, CSS, Bootstrap"
+    },
+    {
+        name: "Scrapoogle",
+        imgName: "scrapoogle.jpg",
+        link: "https://agile-coast-42538.herokuapp.com/",
+        description: "Application to scrape news article headers from google news and let you make comments about it (under-construction)",
+        technologies: "Node.js, Express.js, Handlebars, MongoDB, Mongoose, Axios, Cheerio, Javascript, jQuery, HTML, CSS"
     }
 ];
 
