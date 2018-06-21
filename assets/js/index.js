@@ -77,7 +77,7 @@ const logos = [{
 ];
 
 
-const skills = ["Javascript", "Node.js", "Express.js", "Firebase", "MongoDB", "Ajax", "RESTful", "API's", "PHP", "jQuery", "MySQL", "HTML", "CSS", "Bootstrap", "Adobe Illustrator", "Adobe Photoshop", "Vectornator", "Git"];
+const skills = ["Javascript", "ReactJs" ,"Node.js", "Express.js", "Firebase", "MongoDB", "Ajax", "RESTful", "API's", "PHP", "jQuery", "MySQL", "HTML", "CSS", "Bootstrap", "Adobe Illustrator", "Adobe Photoshop", "Vectornator", "Git"];
 
 const imageLocationWebsite = "./assets/img/websites/";
 const imageLocationLogos = "./assets/img/logos/";
