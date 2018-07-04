@@ -43,7 +43,7 @@ const websites = [{
         imgName: "rps.jpg",
         link: "https://bagglerock.github.io/RPS-Multiplayer",
         github: "https://github.com/bagglerock/RPS-Multiplayer",
-        description: "Multiplayer Rock, Paper, Scissors with chat. (Working on it currently, should be finished soon)",
+        description: "Multiplayer Rock, Paper, Scissors with chat.",
         technologies: "Javascript, jQuery, Firebase, HTML, CSS"
     },
     {
@@ -53,6 +53,14 @@ const websites = [{
         github: "https://github.com/bagglerock/TriviaGame",
         description: "Trivia Game where I couldn't think of any questions, so I just made odd questions and answers",
         technologies: "Javascript, jQuery, HTML, CSS, Bootstrap"
+    },
+    {
+        name: "Clicky Game",
+        imgName: "clicky.jpg",
+        link: "https://mysterious-stream-83031.herokuapp.com/",
+        github: "https://github.com/bagglerock/clicky-game",
+        description: "Clicky Game is a small little game much like memory.  Try not to click on the same picture twice and build up your score.",
+        technologies: "MERN"
     }
 ];
 
