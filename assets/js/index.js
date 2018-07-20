@@ -61,6 +61,14 @@ const websites = [{
         github: "https://github.com/bagglerock/clicky-game",
         description: "Clicky Game is a small little game much like memory.  Try not to click on the same picture twice and build up your score.",
         technologies: "MERN"
+    },
+    {
+        name: "PeachCo Lister 3.0",
+        imgName: "peachco.gif",
+        link: "https://limitless-reaches-23686.herokuapp.com",
+        github: "https://github.com/bagglerock/peachco-react",
+        description: "PeachCo Lister is the listing program for PeachCo that integrates with Ebay's API to list products from a database",
+        technologies: "ReactJS, MySQL, NodeJS, Express, jsftp, node-ebay-api, multer"
     }
 ];
 
