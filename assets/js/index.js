@@ -152,7 +152,7 @@ $(document).ready(function() {
         techDiv.append(techPTag).addClass("description-div");
 
 
-        $(mainDiv).append(imgDiv, nameDiv, linksDiv, gitDiv, descriptionDiv, techDiv);
+        $(mainDiv).append(imgDiv, nameDiv, linksDiv, gitDiv, descriptionDiv, techDiv).addClass("style_prevu_kit");
         $("#websites-area").append(mainDiv);
 
     }
@@ -174,7 +174,7 @@ $(document).ready(function() {
         nameHTag.text(name);
         nameDiv.append(nameHTag).addClass("description-div");
 
-        $(mainDiv).append(nameDiv, imgDiv);
+        $(mainDiv).append(nameDiv, imgDiv).addClass("style_prevu_kit");
         $("#logos-area").append(mainDiv);
 
 
