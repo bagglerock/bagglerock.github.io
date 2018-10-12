@@ -3,7 +3,7 @@ const websites = [
     name: "Weird Trivia Fun - Using React",
     imgName: "trivia-react.png",
     link: "https://glacial-bastion-18712.herokuapp.com",
-    github: "https://github.com/bagglerock/questionnaire",
+    github: "https://github.com/bagglerock/Trivia-React",
     description:
       "A rewrite of the Trivia game using React.   Redux will be added to it soon.",
     technologies:
