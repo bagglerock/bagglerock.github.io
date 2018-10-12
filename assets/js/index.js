@@ -1,11 +1,11 @@
 const websites = [
   {
     name: "Weird Trivia Fun - Using React",
-    imgName: "trivia-react.jpg",
+    imgName: "trivia-react.png",
     link: "https://glacial-bastion-18712.herokuapp.com",
     github: "https://github.com/bagglerock/questionnaire",
     description:
-      "A rewrite of the Trivia game using React.  This is just a sandbox project that I chose to make to practice working with yarn-eject and the webpack config.  I fiddled around with using the CSS modules at first and then decided to make it a new version of the Trivia app using React.  Redux will be added to it soon.",
+      "A rewrite of the Trivia game using React.   Redux will be added to it soon.",
     technologies:
       "Node.js, Express.js, React, Bootstrap 4+, css modules set to true, Javascript, HTML, CSS"
   },
