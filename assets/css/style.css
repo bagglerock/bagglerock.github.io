@@ -209,7 +209,8 @@ section + div{
     text-align: center;
     font-weight:bold;
     padding: 1em 0;
-    border-bottom: solid 1px orange;
+    border-bottom: solid 1px white;
+    color: orange;
     /* border-top: solid 1px darkblue; */
     margin-bottom: 1em;
 }
@@ -239,7 +240,7 @@ section + div{
 
 #portfolio-template, #logos-template  {
     display: grid;
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
     /* grid-template-columns: repeat(auto-fill, 420px); */
 }
 
