@@ -56,7 +56,7 @@ const projects = [
     technologies: "Javascript, HTML, CSS, Bootstrap"
   },
   {
-    name: "Rock Paper Scissors - Multiplayer",
+    name: "Rock Paper Scissors",
     imgName: "rps.jpg",
     link: "https://bagglerock.github.io/RPS-Multiplayer",
     github: "https://github.com/bagglerock/RPS-Multiplayer",

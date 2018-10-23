@@ -260,6 +260,10 @@ section + div{
     margin: .2em 0;
 }
 
+.project-image, .logo-image{
+    height: 250px;
+}
+
 .project-image>img , .logo-image> img {
     width: 300px;
 }
