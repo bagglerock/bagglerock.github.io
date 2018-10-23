@@ -22,6 +22,21 @@
 		}
 	}
 
+	// define all elements with className link
+	const link = document.getElementsByClassName("link");
+
+	// loop through all the link class and set an eventlistener that will close the nav bar when it is responsive after a button with className link is clicked
+	for (let i = 0; i < link.length; i++) {
+		link[i].addEventListener("click", (e) => {
+			if (e.target.className === "link"){
+				const sticky = document.getElementById("sticky-nav");
+				const hero = document.getElementById("hero-nav");
+				sticky.className = "sticky-nav";
+				hero.className = "hero-nav";
+			}
+		})
+	}
+
 	document.getElementById("icon").addEventListener("click", () => {
 		navResponsive();
 	})
