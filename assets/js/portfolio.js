@@ -110,6 +110,16 @@ const projects = [
       "A small practice project where I made ajax calls in pure Javascript.  It changes data using a click event in a small section of the page acting like a single page application",
     technologies:
       ""
+  },
+  {
+    name: "Scrapoogle",
+    imgName: "scrapoogle.png",
+    link: "https://vast-taiga-79745.herokuapp.com",
+    github: "https://github.com/bagglerock/Scrapoogle",
+    description:
+      "This is a rewrite of the Scrappy Scraper site using ReactJS with Node backend.  CSS Modules are used in this one to maintain simplicity.",
+    technologies:
+      ""
   }
 ];
 
