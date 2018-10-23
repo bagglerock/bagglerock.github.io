@@ -100,6 +100,16 @@ const projects = [
       "A binary calculator that is written in HTML, CSS, and Javascript",
     technologies:
       ""
+  },
+  {
+    name: "Ajax Event Base Class",
+    imgName: "ajax.png",
+    link: "https://bagglerock.github.io/ajax-event-base-class/",
+    github: "https://github.com/bagglerock/ajax-event-base-class",
+    description:
+      "A small practice project where I made ajax calls in pure Javascript.  It changes data using a click event in a small section of the page acting like a single page application",
+    technologies:
+      ""
   }
 ];
 
