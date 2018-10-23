@@ -114,7 +114,7 @@ const logos = [
 
 // templating engine using ES6 syntax
 document.addEventListener("DOMContentLoaded", function() {
-    //the template that will be used... the variables are denoted by "%%...%%"
+  //the template that will be used... the variables are denoted by "%%...%%"
   let template = `
       <div class="project-container">
         <div>
@@ -138,9 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
       </div>
       `;
   let portfolio = "";
-  //   let projects = "";
   for (let key in projects) {
-
     //little regex to replace the "%%...%%"
 
     portfolio += template
@@ -153,4 +151,25 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.getElementById("portfolio-template").innerHTML = portfolio;
+
+  let logoTemplate = `
+  <div class="logo-container">
+    <div>
+        <h4>%%name%%</h4>
+    </div>
+    <div class="logo-image">
+        <img src="./assets/img/logos/%%image%%"/>
+    </div>
+  </div>
+  `;
+  let logoList = "";
+  for (let key in logos) {
+    //little regex to replace the "%%...%%"
+
+    logoList += logoTemplate
+      .replace(/%%name%%/g, logos[key].name)
+      .replace(/%%image%%/g, logos[key].img);
+  }
+
+  document.getElementById("logos-template").innerHTML = logoList;
 });

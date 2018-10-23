@@ -225,6 +225,40 @@ section + div{
     width: 300px;
 }
 
+/* Logos Section */
+
+.logos {
+    background-color: #464646;
+    color: white;
+}
+
+.logos>div>h2 {
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+.logo-container {
+    padding: 2em 1.5em;
+    margin: .2em;
+    background-color: #4f4f4f;
+    border-radius: 10px;
+}
+
+.logo-container > div {
+    margin: .2em 0;
+    padding: 1em;
+}
+
+#logos-template {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, 400px);
+}
+
+.logo-image> img {
+    width: 300px;
+}
+
 
 /* Contact Section */
 
