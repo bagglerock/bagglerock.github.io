@@ -5,7 +5,7 @@ const projects = [
     link: "https://glacial-bastion-18712.herokuapp.com",
     github: "https://github.com/bagglerock/Trivia-React",
     description:
-      "A rewrite of the Trivia game using React.   Redux will be added to it soon.",
+      "This is a Trivia Game made up of nonsense questions and answers. It might not make any sense but there are correct answers. The questions and answers are shuffled so memorizing the placement of the answers will not help. Written using ReactJS, Bootstrap, and CSS grid. Bootstrap was just used to help quickly create each of the components. CSS grid was just used to help layout certain parts of the app.",
     technologies:
       "Node.js, Express.js, React, Bootstrap 4+, css modules set to true, Javascript, HTML, CSS"
   },
@@ -15,7 +15,7 @@ const projects = [
     link: "https://immense-plateau-63304.herokuapp.com/",
     github: "https://github.com/bagglerock/Chefs-Den",
     description:
-      "Recipe Finder using the Yummly API.  Login sytem for saving favorites",
+      "An application dedicated to your food needs.  This uses Yummly API to get the recipes and displays them using a combination of JQuery and Handlebars.  It uses MySQL to save your favorites and login information.",
     technologies:
       "Node.js, Express.js, Handlebars, bcrypt, MySQL, Sequelize, Javascript, jQuery, HTML, CSS"
   },
@@ -24,7 +24,7 @@ const projects = [
     imgName: "knockout.jpg",
     link: "http://knockoutfitnessmuaythai.com",
     github: "https://github.com/bagglerock/knockout-fitness",
-    description: "Website for Knockout Fitness Muay Thai in Brick NJ",
+    description: "This is a website built for Knockout Fitness Muay Thai in Brick NJ.",
     technologies: "HTML, CSS, jQuery"
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     link: "https://agile-coast-42538.herokuapp.com/",
     github: "https://github.com/bagglerock/Scrappy-Scraper",
     description:
-      "Application to scrape news article headers from google news and let you make comments about it (under-construction)",
+      "This app is designed to pull articles from news.google.com with the headline, a brief summary and a link to the actual article.  When update is hit, it will give a list of all the articles that news.google.com provies at the time.  Anything highlighted with a background in green is an article that had previously been saved.  In the saved articles, you have the ability to store any new notes.",
     technologies:
       "Node.js, Express.js, Handlebars, MongoDB, Mongoose, Axios, Cheerio, Javascript, jQuery, HTML, CSS"
   },
@@ -52,7 +52,7 @@ const projects = [
     link: "https://bagglerock.github.io/Hangman-Game",
     github: "https://github.com/bagglerock/Hangman-Game",
     description:
-      "Hangman game for the browser.  Musicians are the subject and spotify comes up on correct guess.",
+      "Hangman game for the browser.  Musicians are the subject and spotify comes up on correct guess. Written using HTML, CSS and Javascript",
     technologies: "Javascript, HTML, CSS, Bootstrap"
   },
   {
@@ -60,7 +60,7 @@ const projects = [
     imgName: "rps.jpg",
     link: "https://bagglerock.github.io/RPS-Multiplayer",
     github: "https://github.com/bagglerock/RPS-Multiplayer",
-    description: "Multiplayer Rock, Paper, Scissors with chat.",
+    description: "Multiplayer Rock, Paper, Scissors with chat.  Written using HTML, CSS, Bootstrap, and the Firebase API",
     technologies: "Javascript, jQuery, Firebase, HTML, CSS"
   },
   {
@@ -69,7 +69,7 @@ const projects = [
     link: "https://bagglerock.github.io/TriviaGame/",
     github: "https://github.com/bagglerock/TriviaGame",
     description:
-      "Trivia Game where I couldn't think of any questions, so I just made odd questions and answers",
+      "This is a fun little take on Trivia.  I could not think of any questions or answers so I wanted to create a list of questions and answers that made absolutely no sense. This is written in basic HTML using some Bootstrap, a little CSS, Javascript and Jquery.  ",
     technologies: "Javascript, jQuery, HTML, CSS, Bootstrap"
   },
   {
@@ -78,7 +78,7 @@ const projects = [
     link: "https://mysterious-stream-83031.herokuapp.com/",
     github: "https://github.com/bagglerock/clicky-game",
     description:
-      "Clicky Game is a small little game much like memory.  Try not to click on the same picture twice and build up your score.",
+      "Clicky Game is a small little game much like memory.  Try not to click on the same picture twice and build up your score.  This was my first React App that I had made.",
     technologies: "MERN"
   },
   {
@@ -87,9 +87,19 @@ const projects = [
     link: "https://limitless-reaches-23686.herokuapp.com",
     github: "https://github.com/bagglerock/peachco-react",
     description:
-      "A browser based application that holds product information and lists products onto Ebay, which can also be used on tablets. At the moment the repo is private.",
+      "A browser based application that holds product information and lists products onto Ebay. At the moment the repo is private.  It was originally written using HTML, CSS, Javascript and PHP, but I wanted to make a Single Page version that would be optimized for the tablet.  This one uses React with a Node Backend.  Products are stored in a MySQL database, and sent to Ebay using the npm-package called ebay-api.  Images are sent to another server using the npm package jsftp.",
     technologies:
       "ReactJS, MySQL, NodeJS, Express, jsftp, node-ebay-api, multer"
+  },
+  {
+    name: "Binary Calculator",
+    imgName: "binary-calc.png",
+    link: "https://bagglerock.github.io/Binary-Calculator/",
+    github: "https://github.com/bagglerock/Binary-Calculator",
+    description:
+      "A binary calculator that is written in HTML, CSS, and Javascript",
+    technologies:
+      ""
   }
 ];
 
@@ -125,17 +135,14 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
         <div class="links">
           <div class="website">
-              <a href="%%link%%" alt="%%name%%">Website</a>
+              <a href="%%link%%" alt="%%name%%" target="_blank">Website</a>
           </div>
           <div class="git">
-              <a href="%%github%%" alt="%%name%%">Github</a>
+              <a href="%%github%%" alt="%%name%%" target="_blank">Github</a>
           </div>
         </div>
         <div>
             <p>%%description%%</p>
-        </div>
-        <div>
-            <p>%%techs%%</p>
         </div>
       </div>
       `;

@@ -40,6 +40,10 @@ li{
     font-family: 'Cormorant', serif;
 }
 
+a {
+    font-family: 'Cormorant', serif;
+}
+
 button {
     font-family: 'Marcellus SC', serif;
 }
@@ -189,7 +193,7 @@ section + div{
 /* Portfolio & Logos Section */
 
 .portfolio, .logos  {
-    background-color: #555;
+    background-color: rgb(25, 21, 65);
     color: white;
 }
 
@@ -197,13 +201,15 @@ section + div{
     text-align: center;
     padding-bottom: 2em;
     font-weight: bold;
+    border-bottom: solid 1px orange;
+    margin-bottom: 1em;
 }
 
 #portfolio-template>.project-container>div>h4, #logos-template>.logo-container>div>h4 {
     text-align: center;
     font-weight:bold;
     padding: 1em 0;
-    border-bottom: solid 1px darkblue;
+    border-bottom: solid 1px orange;
     /* border-top: solid 1px darkblue; */
     margin-bottom: 1em;
 }
@@ -228,12 +234,13 @@ section + div{
 #portfolio-template>.project-container>.links>div>a {
     text-decoration: none;
     color: orange;
+    padding: 0 1em;
 }
 
 #portfolio-template, #logos-template  {
     display: grid;
     justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fill, 390px);
+    grid-template-columns: repeat(auto-fill, 420px);
 }
 
 .project-container, .logo-container  {
