@@ -276,6 +276,12 @@ section + div{
     border-radius: 10px;
     font-size: 1.5em;
     background-color: orange;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+.contact>button:hover {
+    background-color: darkorange;
 }
 
 /* Footer Section */
@@ -318,6 +324,11 @@ footer {
     font-size: 0.9em;
     color: white;
 }
+
+/* #sticky-nav>ul>li:hover {
+    background-image: radial-gradient(grey 20%, darkgray 30%, black 50%);
+    transition: radial-gradient 1s;
+} */
 
 #sticky-nav>ul>li>a {
     text-decoration: none;
