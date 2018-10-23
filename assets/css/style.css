@@ -186,78 +186,73 @@ section + div{
 }
 
 
-/* Portfolio Section */
+/* Portfolio & Logos Section */
 
-.portfolio {
+.portfolio, .logos  {
     background-color: #555;
     color: white;
 }
 
-.portfolio-header>h2{
+.portfolio-header>h2, .logos>div>h2 {
     text-align: center;
     padding-bottom: 2em;
+    font-weight: bold;
 }
 
+#portfolio-template>.project-container>div>h4, #logos-template>.logo-container>div>h4 {
+    text-align: center;
+    font-weight:bold;
+    padding: 1em 0;
+    border-bottom: solid 1px darkblue;
+    /* border-top: solid 1px darkblue; */
+    margin-bottom: 1em;
+}
 
-#portfolio-template {
+#portfolio-template>.project-container>.project-image, #logos-template>.logo-container>.logo-image{
+    text-align: center;
+}
+
+#portfolio-template>.project-container>.links {
     display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fill, 400px);
+    grid-template-columns: auto auto;
 }
 
-.project-container {
-    padding: 2em 1.5em;
-    margin: .2em;
-    background-color: #4f4f4f;
-    border-radius: 10px;
+#portfolio-template>.project-container>.links>.website {
+    text-align: left;
 }
 
-.project-container > div {
-    margin: .2em 0;
+#portfolio-template>.project-container>.links>.git {
+    text-align: right;
 }
 
-.project-container>div>a {
+#portfolio-template>.project-container>.links>div>a {
     text-decoration: none;
     color: orange;
 }
 
-.project-image>img {
-    width: 300px;
+#portfolio-template, #logos-template  {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, 390px);
 }
 
-/* Logos Section */
-
-.logos {
-    background-color: #464646;
-    color: white;
-}
-
-.logos>div>h2 {
-    text-align: center;
-    padding-bottom: 2em;
-}
-
-.logo-container {
+.project-container, .logo-container  {
     padding: 2em 1.5em;
     margin: .2em;
     background-color: #4f4f4f;
     border-radius: 10px;
 }
 
-.logo-container > div {
+.project-container > div, .logo-container > div  {
     margin: .2em 0;
-    padding: 1em;
 }
 
-#logos-template {
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fill, 400px);
-}
-
-.logo-image> img {
+.project-image>img , .logo-image> img {
     width: 300px;
 }
+
+
+
 
 
 /* Contact Section */

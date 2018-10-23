@@ -123,11 +123,13 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="project-image">
             <img src="./assets/img/websites/%%image%%"/>
         </div>
-        <div>
-            <a href="%%link%%" alt="%%name%%">Website Link</a>
-        </div>
-        <div>
-            <a href="%%github%%" alt="%%name%%">Github Link</a>
+        <div class="links">
+          <div class="website">
+              <a href="%%link%%" alt="%%name%%">Website</a>
+          </div>
+          <div class="git">
+              <a href="%%github%%" alt="%%name%%">Github</a>
+          </div>
         </div>
         <div>
             <p>%%description%%</p>
