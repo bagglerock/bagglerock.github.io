@@ -197,7 +197,7 @@ section + div{
     color: white;
 }
 
-.portfolio-header>h2, .logos>div>h2 {
+.portfolio-header>h3, .logos>div>h3 {
     text-align: center;
     padding-bottom: 2em;
     font-weight: bold;
@@ -205,7 +205,7 @@ section + div{
     margin-bottom: 1em;
 }
 
-#portfolio-template>.project-container>div>h4, #logos-template>.logo-container>div>h4 {
+#portfolio-template>.project-container>div>h3, #logos-template>.logo-container>div>h3 {
     text-align: center;
     font-weight:bold;
     padding: 1em 0;
@@ -239,15 +239,20 @@ section + div{
 
 #portfolio-template, #logos-template  {
     display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: repeat(auto-fill, 420px);
+    /* justify-content: space-evenly; */
+    /* grid-template-columns: repeat(auto-fill, 420px); */
 }
 
 .project-container, .logo-container  {
     padding: 2em 1.5em;
     margin: .2em;
-    background-color: #4f4f4f;
+    background-color: rgb(32, 28, 80);
     border-radius: 10px;
+    transition: background-color 1s;
+}
+
+.project-container:hover, .logo-container:hover {
+    background-color: rgb(46, 41, 104);
 }
 
 .project-container > div, .logo-container > div  {
@@ -257,10 +262,6 @@ section + div{
 .project-image>img , .logo-image> img {
     width: 300px;
 }
-
-
-
-
 
 /* Contact Section */
 
@@ -396,6 +397,13 @@ footer {
             "frontend backend"
             "api other"
         ;
+    }
+
+    #portfolio-template, #logos-template  {
+        display: grid;
+        grid-template-columns: auto auto;
+        /* justify-content: space-evenly; */
+        /* grid-template-columns: repeat(auto-fill, 420px); */
     }
 
     h1 {

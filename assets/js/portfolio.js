@@ -28,7 +28,7 @@ const projects = [
     technologies: "HTML, CSS, jQuery"
   },
   {
-    name: "Scrapoogle",
+    name: "Scrappy-Scraper",
     imgName: "scrapoogle.jpg",
     link: "https://agile-coast-42538.herokuapp.com/",
     github: "https://github.com/bagglerock/Scrappy-Scraper",
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let template = `
       <div class="project-container">
         <div>
-            <h4>%%name%%</h4>
+            <h3>%%name%%</h3>
         </div>
         <div class="project-image">
             <img src="./assets/img/websites/%%image%%"/>
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let logoTemplate = `
   <div class="logo-container">
     <div>
-        <h4>%%name%%</h4>
+        <h3>%%name%%</h3>
     </div>
     <div class="logo-image">
         <img src="./assets/img/logos/%%image%%"/>
