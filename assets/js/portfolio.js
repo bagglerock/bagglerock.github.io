@@ -1,4 +1,4 @@
-const websites = [
+const projects = [
   {
     name: "Weird Trivia Fun - Using React",
     imgName: "trivia-react.png",
@@ -87,7 +87,7 @@ const websites = [
     link: "https://limitless-reaches-23686.herokuapp.com",
     github: "https://github.com/bagglerock/peachco-react",
     description:
-      "PeachCo Lister is the listing program for PeachCo that integrates with Ebay's API to list products from a database",
+      "A browser based application that holds product information and lists products onto Ebay, which can also be used on tablets. At the moment the repo is private.",
     technologies:
       "ReactJS, MySQL, NodeJS, Express, jsftp, node-ebay-api, multer"
   }
@@ -112,120 +112,45 @@ const logos = [
   }
 ];
 
-const skills = [
-  "Javascript",
-  "ReactJs",
-  "Node.js",
-  "Express.js",
-  "Firebase",
-  "MongoDB",
-  "Ajax",
-  "RESTful",
-  "API's",
-  "PHP",
-  "jQuery",
-  "MySQL",
-  "HTML",
-  "CSS",
-  "Bootstrap",
-  "Adobe Illustrator",
-  "Adobe Photoshop",
-  "Vectornator",
-  "Git"
-];
+// templating engine using ES6 syntax
+document.addEventListener("DOMContentLoaded", function() {
+    //the template that will be used... the variables are denoted by "%%...%%"
+  let template = `
+      <div class="project-container">
+        <div>
+            <h4>%%name%%</h4>
+        </div>
+        <div class="project-image">
+            <img src="./assets/img/websites/%%image%%"/>
+        </div>
+        <div>
+            <a href="%%link%%" alt="%%name%%">Website Link</a>
+        </div>
+        <div>
+            <a href="%%github%%" alt="%%name%%">Github Link</a>
+        </div>
+        <div>
+            <p>%%description%%</p>
+        </div>
+        <div>
+            <p>%%techs%%</p>
+        </div>
+      </div>
+      `;
+  let portfolio = "";
+  //   let projects = "";
+  for (let key in projects) {
 
-const imageLocationWebsite = "./assets/img/websites/";
-const imageLocationLogos = "./assets/img/logos/";
+    //little regex to replace the "%%...%%"
 
-$(document).ready(function() {
-  $(window).scroll(function() {
-    $(".info-section").css("opacity", 1 - $(window).scrollTop() / 250);
-    $(".links-section").css("opacity", 1 - $(window).scrollTop() / 250);
-    $(".headline").css("opacity", 1 - $(window).scrollTop() / 250);
-  });
-
-  for (let i = 0; i < websites.length; i++) {
-    let name = websites[i].name;
-    let imgName = websites[i].imgName;
-    let link = websites[i].link;
-    let github = websites[i].github;
-    let description = websites[i].description;
-    let technologies = websites[i].technologies;
-
-    let mainDiv = $("<div>");
-
-    let imgDiv = $("<div>");
-    let imgTag = $("<img>");
-    let imgATag = $("<a>");
-    imgTag.attr("src", imageLocationWebsite + imgName);
-    imgATag.attr("href", link).attr("target", "_blank");
-    imgATag.append(imgTag);
-    imgDiv.append(imgATag);
-
-    let nameDiv = $("<div>");
-    let nameHTag = $("<h3>");
-    nameHTag.text(name);
-    nameDiv.append(nameHTag).addClass("webapp-name");
-
-    let linksDiv = $("<div>");
-    let linkATag = $("<a>");
-    linkATag
-      .attr("href", link)
-      .text(link)
-      .attr("target", "_blank");
-    linksDiv.append(linkATag).addClass("link-div");
-
-    let gitDiv = $("<div>");
-    let gitATag = $("<a>");
-    gitATag
-      .attr("href", github)
-      .text(github)
-      .attr("target", "_blank");
-    gitDiv.append(gitATag).addClass("link-div");
-
-    let descriptionDiv = $("<div>");
-    let descPTag = $("<p>");
-    descPTag.text(description);
-    descriptionDiv.append(descPTag).addClass("description-div");
-
-    let techDiv = $("<div>");
-    let techPTag = $("<p>");
-    techPTag.text(technologies);
-    techDiv.append(techPTag).addClass("description-div");
-
-    $(mainDiv)
-      .append(imgDiv, nameDiv, linksDiv, gitDiv, descriptionDiv, techDiv)
-      .addClass("style_prevu_kit");
-    $("#websites-area").append(mainDiv);
+    portfolio += template
+      .replace(/%%name%%/g, projects[key].name)
+      .replace(/%%image%%/g, projects[key].imgName)
+      .replace(/%%link%%/g, projects[key].link)
+      .replace(/%%github%%/g, projects[key].github)
+      .replace(/%%description%%/g, projects[key].description)
+      .replace(/%%techs%%/g, projects[key].technologies);
   }
 
-  for (let i = 0; i < logos.length; i++) {
-    let mainDiv = $("<div>");
-
-    let name = logos[i].name;
-    let imgName = logos[i].img;
-
-    let imgDiv = $("<div>");
-    let imgTag = $("<img>");
-    imgTag.attr("src", imageLocationLogos + imgName);
-    imgDiv.append(imgTag);
-
-    let nameDiv = $("<div>");
-    let nameHTag = $("<h4>");
-    nameHTag.text(name);
-    nameDiv.append(nameHTag).addClass("description-div");
-
-    $(mainDiv)
-      .append(nameDiv, imgDiv)
-      .addClass("style_prevu_kit");
-    $("#logos-area").append(mainDiv);
-  }
-
-  for (let i = 0; i < skills.length; i++) {
-    let ulTag = $("<ul>");
-    let liTag = $("<li>");
-    liTag.text(skills[i]);
-    ulTag.append(liTag);
-    $("#skills-area").append(ulTag);
-  }
+  document.getElementById("portfolio-template").innerHTML = portfolio;
 });
