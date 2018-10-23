@@ -12,23 +12,36 @@ body {
 
 h1 {
     font-size: 2.5rem;
+    font-family: 'Fredericka the Great', cursive;
 }
 
 h2 {
     font-size: 2rem;
+    font-family: 'Cormorant', serif;
 }
 
 h3 {
     font-size: 1.5rem;
+    font-family: 'Marcellus SC', serif;
 }
 
 h4 {
     font-size: 1.2rem;
+    font-family: 'Cormorant', serif;
 }
 
 p {
     padding-top: 2em;
     line-height: 1.8em;
+    font-family: 'Cormorant', serif;
+}
+
+li{
+    font-family: 'Cormorant', serif;
+}
+
+button {
+    font-family: 'Marcellus SC', serif;
 }
 
 main {
