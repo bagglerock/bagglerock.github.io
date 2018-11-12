@@ -139,6 +139,10 @@ const logos = [
   {
     name: "RHE Gen II",
     img: "rhe.png"
+  },
+  {
+    name: "Yale Perinatal Associates",
+    img: "kris-01.png"
   }
 ];
 
