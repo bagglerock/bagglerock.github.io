@@ -1,3 +1,66 @@
+document.addEventListener("DOMContentLoaded", function() {
+  let template = `
+      <div class="project-container">
+        <div>
+            <h3>%%name%%</h3>
+        </div>
+        <div class="project-image">
+            <img src="./assets/img/websites/%%image%%"/>
+        </div>
+        <div class="links">
+          <div class="website">
+              <a href="%%link%%" alt="%%name%%" target="_blank">Website</a>
+          </div>
+          <div class="git">
+              <a href="%%github%%" alt="%%name%%" target="_blank">Github</a>
+          </div>
+        </div>
+        <div>
+            <p>%%description%%</p>
+        </div>
+      </div>
+      `;
+
+  let portfolio = "";
+
+  for (let key in projects) {
+    //little regex to replace the "%%...%%"
+
+    portfolio += template
+      .replace(/%%name%%/g, projects[key].name)
+      .replace(/%%image%%/g, projects[key].imgName)
+      .replace(/%%link%%/g, projects[key].link)
+      .replace(/%%github%%/g, projects[key].github)
+      .replace(/%%description%%/g, projects[key].description)
+      .replace(/%%techs%%/g, projects[key].technologies);
+  }
+
+  document.getElementById("portfolio-template").innerHTML = portfolio;
+
+  let logoTemplate = `
+  <div class="logo-container">
+    <div>
+        <h3>%%name%%</h3>
+    </div>
+    <div class="logo-image">
+        <img src="./assets/img/logos/%%image%%"/>
+    </div>
+  </div>
+  `;
+
+  let logoList = "";
+
+  for (let key in logos) {
+    //little regex to replace the "%%...%%"
+
+    logoList += logoTemplate
+      .replace(/%%name%%/g, logos[key].name)
+      .replace(/%%image%%/g, logos[key].img);
+  }
+
+  document.getElementById("logos-template").innerHTML = logoList;
+});
+
 const projects = [
   {
     name: "Weird Trivia Fun - Using React",
@@ -24,7 +87,8 @@ const projects = [
     imgName: "knockout.jpg",
     link: "http://knockoutfitnessmuaythai.com",
     github: "https://github.com/bagglerock/knockout-fitness",
-    description: "This is a website built for Knockout Fitness Muay Thai in Brick NJ.",
+    description:
+      "This is a website built for Knockout Fitness Muay Thai in Brick NJ.",
     technologies: "HTML, CSS, jQuery"
   },
   {
@@ -60,7 +124,8 @@ const projects = [
     imgName: "rps.jpg",
     link: "https://bagglerock.github.io/RPS-Multiplayer",
     github: "https://github.com/bagglerock/RPS-Multiplayer",
-    description: "Multiplayer Rock, Paper, Scissors with chat.  Written using HTML, CSS, Bootstrap, and the Firebase API",
+    description:
+      "Multiplayer Rock, Paper, Scissors with chat.  Written using HTML, CSS, Bootstrap, and the Firebase API",
     technologies: "Javascript, jQuery, Firebase, HTML, CSS"
   },
   {
@@ -98,8 +163,7 @@ const projects = [
     github: "https://github.com/bagglerock/Binary-Calculator",
     description:
       "A binary calculator that is written in HTML, CSS, and Javascript",
-    technologies:
-      ""
+    technologies: ""
   },
   {
     name: "Ajax Event Base Class",
@@ -108,8 +172,7 @@ const projects = [
     github: "https://github.com/bagglerock/ajax-event-base-class",
     description:
       "A small practice project where I made ajax calls in pure Javascript.  It changes data using a click event in a small section of the page acting like a single page application",
-    technologies:
-      ""
+    technologies: ""
   },
   {
     name: "Scrapoogle",
@@ -118,8 +181,7 @@ const projects = [
     github: "https://github.com/bagglerock/Scrapoogle",
     description:
       "This is a rewrite of the Scrappy Scraper site using ReactJS with Node backend.  CSS Modules are used in this one to maintain simplicity.",
-    technologies:
-      ""
+    technologies: ""
   }
 ];
 
@@ -145,64 +207,3 @@ const logos = [
     img: "kris-01.png"
   }
 ];
-
-// templating engine using ES6 syntax
-document.addEventListener("DOMContentLoaded", function() {
-  //the template that will be used... the variables are denoted by "%%...%%"
-  let template = `
-      <div class="project-container">
-        <div>
-            <h3>%%name%%</h3>
-        </div>
-        <div class="project-image">
-            <img src="./assets/img/websites/%%image%%"/>
-        </div>
-        <div class="links">
-          <div class="website">
-              <a href="%%link%%" alt="%%name%%" target="_blank">Website</a>
-          </div>
-          <div class="git">
-              <a href="%%github%%" alt="%%name%%" target="_blank">Github</a>
-          </div>
-        </div>
-        <div>
-            <p>%%description%%</p>
-        </div>
-      </div>
-      `;
-  let portfolio = "";
-  for (let key in projects) {
-    //little regex to replace the "%%...%%"
-
-    portfolio += template
-      .replace(/%%name%%/g, projects[key].name)
-      .replace(/%%image%%/g, projects[key].imgName)
-      .replace(/%%link%%/g, projects[key].link)
-      .replace(/%%github%%/g, projects[key].github)
-      .replace(/%%description%%/g, projects[key].description)
-      .replace(/%%techs%%/g, projects[key].technologies);
-  }
-
-  document.getElementById("portfolio-template").innerHTML = portfolio;
-
-  let logoTemplate = `
-  <div class="logo-container">
-    <div>
-        <h3>%%name%%</h3>
-    </div>
-    <div class="logo-image">
-        <img src="./assets/img/logos/%%image%%"/>
-    </div>
-  </div>
-  `;
-  let logoList = "";
-  for (let key in logos) {
-    //little regex to replace the "%%...%%"
-
-    logoList += logoTemplate
-      .replace(/%%name%%/g, logos[key].name)
-      .replace(/%%image%%/g, logos[key].img);
-  }
-
-  document.getElementById("logos-template").innerHTML = logoList;
-});
