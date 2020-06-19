@@ -63,14 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const projects = [
   {
-    name: "Trivia - Using React",
-    imgName: "trivia-react.png",
+    name: "Trivia Game",
+    imgName: "trivia.png",
     link: "https://bagglerock.github.io/Trivia-React/",
     github: "https://github.com/bagglerock/Trivia-React",
     description:
       "This is a trivia game written with React using typescript.  It calls upon the Open Trivia DB API for its questions.  It will randomize the questions and answers.  It is still a WIP at the moment but is playable.  More features to come with time.",
-    technologies:
-      "Node.js, Express.js, React, Bootstrap 4+, css modules set to true, Javascript, HTML, CSS",
+    technologies: "Node.js, React, Typescript, Bootstrap 4+, CSS with Sass",
   },
   {
     name: "Chef's Den",
@@ -92,25 +91,6 @@ const projects = [
     technologies: "HTML, CSS, jQuery",
   },
   {
-    name: "Scrappy-Scraper",
-    imgName: "scrapoogle.jpg",
-    link: "https://agile-coast-42538.herokuapp.com/",
-    github: "https://github.com/bagglerock/Scrappy-Scraper",
-    description:
-      "This app is designed to pull articles from news.google.com with the headline, a brief summary and a link to the actual article.  When update is hit, it will give a list of all the articles that news.google.com provies at the time.  Anything highlighted with a background in green is an article that had previously been saved.  In the saved articles, you have the ability to store any new notes.",
-    technologies:
-      "Node.js, Express.js, Handlebars, MongoDB, Mongoose, Axios, Cheerio, Javascript, jQuery, HTML, CSS",
-  },
-  {
-    name: "Freight Systems NJ",
-    imgName: "freight-sys.jpg",
-    link: "https://bagglerock.github.io/freight-sys",
-    github: "https://github.com/bagglerock/freight-sys",
-    description:
-      "Website for Freight Systems of NJ.  A Logistics company for your shipping needs.",
-    technologies: "HTML, CSS, jQuery",
-  },
-  {
     name: "Hangman",
     imgName: "hangman.jpg",
     link: "https://bagglerock.github.io/Hangman-Game",
@@ -129,24 +109,6 @@ const projects = [
     technologies: "Javascript, jQuery, Firebase, HTML, CSS",
   },
   {
-    name: "Trivia Game",
-    imgName: "trivia.jpg",
-    link: "https://bagglerock.github.io/TriviaGame/",
-    github: "https://github.com/bagglerock/TriviaGame",
-    description:
-      "This is the original version of my Trivia Game which was an assignment from my developer bootcamp course.  It was written using Jquery, and javascript.  The questions were purposely made to not make sense and is mainly there to practice changing the DOM through events using Jquery.  This has been rewritten to be more useful as a real trivia game.",
-    technologies: "Javascript, jQuery, HTML, CSS, Bootstrap",
-  },
-  {
-    name: "Clicky Game",
-    imgName: "clicky.jpg",
-    link: "https://mysterious-stream-83031.herokuapp.com/",
-    github: "https://github.com/bagglerock/clicky-game",
-    description:
-      "Clicky Game is a small little game much like memory.  Try not to click on the same picture twice and build up your score.  This was my first React App that I had made.",
-    technologies: "MERN",
-  },
-  {
     name: "PeachCo Lister 3.0",
     imgName: "peachco.gif",
     link: "https://limitless-reaches-23686.herokuapp.com",
@@ -155,33 +117,6 @@ const projects = [
       "A browser based application that holds product information and lists products onto Ebay. At the moment the repo is private.  It was originally written using HTML, CSS, Javascript and PHP, but I wanted to make a Single Page version that would be optimized for the tablet.  This one uses React with a Node Backend.  Products are stored in a MySQL database, and sent to Ebay using the npm-package called ebay-api.  Images are sent to another server using the npm package jsftp.",
     technologies:
       "ReactJS, MySQL, NodeJS, Express, jsftp, node-ebay-api, multer",
-  },
-  {
-    name: "Binary Calculator",
-    imgName: "binary-calc.png",
-    link: "https://bagglerock.github.io/Binary-Calculator/",
-    github: "https://github.com/bagglerock/Binary-Calculator",
-    description:
-      "A binary calculator that is written in HTML, CSS, and Javascript",
-    technologies: "",
-  },
-  {
-    name: "Ajax Event Base Class",
-    imgName: "ajax.png",
-    link: "https://bagglerock.github.io/ajax-event-base-class/",
-    github: "https://github.com/bagglerock/ajax-event-base-class",
-    description:
-      "A small practice project where I made ajax calls in pure Javascript.  It changes data using a click event in a small section of the page acting like a single page application",
-    technologies: "",
-  },
-  {
-    name: "Scrapoogle",
-    imgName: "scrapoogle.png",
-    link: "https://vast-taiga-79745.herokuapp.com",
-    github: "https://github.com/bagglerock/Scrapoogle",
-    description:
-      "This is a rewrite of the Scrappy Scraper site using ReactJS with Node backend.  CSS Modules are used in this one to maintain simplicity.",
-    technologies: "",
   },
 ];
 
