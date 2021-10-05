@@ -73,13 +73,13 @@ const projects = [
   },
   {
     name: "Chef's Den",
-    imgName: "chefsden.jpg",
-    link: "https://immense-plateau-63304.herokuapp.com/",
-    github: "https://github.com/bagglerock/Chefs-Den",
+    imgName: "chefsden.png",
+    link: "https://chefs-den.herokuapp.com/",
+    github: "https://github.com/bagglerock/Guinness",
     description:
-      "An application dedicated to your food needs.  This uses Yummly API to get the recipes and displays them using a combination of JQuery and Handlebars.  It uses MySQL to save your favorites and login information.",
+      "An application to search recipes. It is still in progress and will gather more features as time progresses.",
     technologies:
-      "Node.js, Express.js, Handlebars, bcrypt, MySQL, Sequelize, Javascript, jQuery, HTML, CSS",
+      "Node.js, Express.js, React, Typescript",
   },
   {
     name: "Knockout Fitness",
@@ -98,25 +98,6 @@ const projects = [
     description:
       "Hangman game for the browser.  Musicians are the subject and spotify comes up on correct guess. Written using HTML, CSS and Javascript",
     technologies: "Javascript, HTML, CSS, Bootstrap",
-  },
-  {
-    name: "Rock Paper Scissors",
-    imgName: "rps.jpg",
-    link: "https://bagglerock.github.io/RPS-Multiplayer",
-    github: "https://github.com/bagglerock/RPS-Multiplayer",
-    description:
-      "Multiplayer Rock, Paper, Scissors with chat.  Written using HTML, CSS, Bootstrap, and the Firebase API",
-    technologies: "Javascript, jQuery, Firebase, HTML, CSS",
-  },
-  {
-    name: "PeachCo Lister 3.0",
-    imgName: "peachco.gif",
-    link: "https://limitless-reaches-23686.herokuapp.com",
-    github: "https://github.com/bagglerock/peachco-react",
-    description:
-      "A browser based application that holds product information and lists products onto Ebay. At the moment the repo is private.  It was originally written using HTML, CSS, Javascript and PHP, but I wanted to make a Single Page version that would be optimized for the tablet.  This one uses React with a Node Backend.  Products are stored in a MySQL database, and sent to Ebay using the npm-package called ebay-api.  Images are sent to another server using the npm package jsftp.",
-    technologies:
-      "ReactJS, MySQL, NodeJS, Express, jsftp, node-ebay-api, multer",
   },
 ];
 
