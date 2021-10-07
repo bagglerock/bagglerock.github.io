@@ -41,19 +41,17 @@
   });
 
   window.addEventListener("scroll", () => {
-    // get the scroll position
-    const scrolled = window.scrollY;
-    // get the height of the window
-    let wh = window.innerHeight * 0.05;
-    //if the scrolled position matches the height of the window then do something
-    if (scrolled > wh) {
+    const scrollPosition = window.scrollY;
+
+    let windowHeight = window.innerHeight * 0.05;
+
+    if (scrollPosition > windowHeight) {
       document.getElementById("sticky-nav").style.display = "block";
     } else {
       document.getElementById("sticky-nav").style.display = "none";
     }
 
-    if (scrolled > 600) {
-      //change this to be a function to scroll at different y positions
+    if (scrollPosition > 600) {
       document.getElementById("about").style.transform = "translateX(0)";
       document.getElementById("about").style.opacity = "1";
     }
