@@ -77,7 +77,7 @@ const projects = [
     link: "https://chefs-den.herokuapp.com/",
     github: "https://github.com/bagglerock/Guinness",
     description:
-      "An application to search recipes. It is still in progress and will gather more features as time progresses.",
+      "An application to search recipes. It is still in progress and will gather more features as time progresses. (May take a 30 seconds for page to spin up.)",
     technologies:
       "Node.js, Express.js, React, Typescript",
   },
