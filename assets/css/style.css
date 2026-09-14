@@ -377,6 +377,10 @@ h1 {
   height: 150px;
   margin: 10px 0;
 }
+.photos-art {
+  background: #343a47;
+  color: #d5dae6;
+}
 .workout-art {
   background: #e8e5ee;
   color: #59436a;
