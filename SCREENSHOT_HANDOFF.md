@@ -2,37 +2,52 @@
 
 The portfolio remains a static HTML/CSS site hosted on GitHub Pages. No React migration or build step is necessary.
 
-## Screenshots to capture
+## Status
 
-Run the apps in their own repositories and capture useful, populated screens with safe demo data. Do not expose credentials, account identifiers, customer details, or private financial information.
+| Project                  | Status                          | Image                                     |
+| ------------------------ | ------------------------------- | ----------------------------------------- |
+| Mastadon                 | Done — real app screenshot      | `assets/img/websites/mastadon.webp`       |
+| Stock Lab (`stocks`)     | Done — real app screenshot      | `assets/img/websites/stock-lab.webp`      |
+| Workout Logger Universal | Still a placeholder             | —                                         |
 
-| Project                  | Suggested screen                                                                           | Target image                              |
-| ------------------------ | ------------------------------------------------------------------------------------------ | ----------------------------------------- |
-| Mastadon                 | Inventory or selling workspace with representative items and clear workflow                | `assets/img/websites/mastadon.webp`       |
-| Stock Lab (`stocks`)     | Research dashboard or a thesis/anomaly view with chart and supporting context              | `assets/img/websites/stock-lab.webp`      |
-| Workout Logger Universal | Native workout logging screen; use a composed iOS/Android image only if both are available | `assets/img/websites/workout-logger.webp` |
+Both captured screenshots come from the applications actually running against seeded demo data. No credentials, account identifiers, customer details, or private financial information appear in them. The Stock Lab market history is synthetic demo data generated for the capture; the anomalies, detector output, and chart were produced by Stock Lab's own scanner from that data, not hand-drawn.
 
-Use actual app screenshots. Aim for 1600px wide web images and keep native captures legible. Optimize as WebP. Avoid screenshots of empty states or development errors.
+## Remaining: Workout Logger Universal
 
-## Replace the placeholders
+This one needs a machine the other two do not.
 
-`index.html` contains three `.project-art` blocks with explicit screenshot placeholder labels. Replace the inside of each block with an image, remove `role="img"` and `aria-label` from its container, and use meaningful image alt text. For example:
+- **iOS (SwiftUI)** requires macOS and Xcode. It cannot be built or run on Linux at all.
+- **Android (Jetpack Compose)** requires the Android SDK from `dl.google.com`, plus either a hardware-accelerated emulator (`/dev/kvm`) or a physical device.
+
+The practical path is to capture it on the Mac that already builds the app:
+
+1. Run the app in the iOS Simulator, get a workout logging screen into a populated state (a session in progress with a few sets recorded reads better than an empty log).
+2. Capture with `⌘S` in Simulator, or `xcrun simctl io booted screenshot workout-logger.png`.
+3. For Android, capture from Android Studio's emulator toolbar or `adb exec-out screencap -p > workout-android.png`.
+4. Convert to WebP at roughly 1600px wide and save as `assets/img/websites/workout-logger.webp`.
+
+A composed iOS/Android side-by-side is only worth it if both captures are available and stay legible at the card size; otherwise a single native screen is stronger.
+
+Then replace the placeholder block in `index.html` (search for `workout-art`) with:
 
 ```html
-<div class="project-art mastadon-art">
+<div class="project-art workout-art">
   <img
-    src="./assets/img/websites/mastadon.webp"
-    alt="Mastadon inventory workspace showing items and listing status"
+    src="./assets/img/websites/workout-logger.webp"
+    alt="Workout Logger session screen showing logged sets, reps, and weight for an exercise in progress."
     loading="lazy"
+    decoding="async"
     width="1600"
     height="1000"
   />
 </div>
 ```
 
-Use the image's actual dimensions. Existing CSS uses `object-fit: contain` to avoid cropping app controls. Adjust slot height if necessary. The current decorative CSS/SVG graphics are placeholders, not representations of the apps or actual market data.
+Use the image's actual dimensions in `width`/`height`. `.project-art img` already applies `object-fit: contain`, so app controls are never cropped. Avoid screenshots of empty states or development errors.
 
-Keep the original hero background and original logo artwork. Preserve the resume-based project descriptions unless the owner requests changes. Repositories for the three featured projects are currently private, so there are intentionally no public source or demo buttons.
+## Note for whoever reseeds Mastadon
+
+Mastadon's inventory table needs 1201px but its card caps the content area at 1150px, so the rightmost "Next step" column sits behind a ~51px horizontal scroll at every desktop width. That is why the featured card uses the stock-detail workflow screen rather than the inventory list.
 
 ## Validate
 

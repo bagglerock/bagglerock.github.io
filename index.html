@@ -5,12 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oscar Villalta — Senior Software Engineer building full-stack applications, APIs, and integrations with C#/.NET, TypeScript, React, and AWS."
+      content="Oscar Villalta is a Senior Software Engineer in New Jersey building full-stack applications, REST APIs, and event-driven integrations with C#/.NET, TypeScript, React, and AWS."
     />
+    <meta name="author" content="Oscar Villalta" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#141924" />
     <title>Oscar Villalta | Senior Software Engineer</title>
+    <link rel="canonical" href="https://bagglerock.github.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Oscar Villalta" />
+    <meta property="og:title" content="Oscar Villalta | Senior Software Engineer" />
+    <meta
+      property="og:description"
+      content="Full-stack applications, thoughtful APIs, and integrations that connect the pieces. Selected work in marketplace engineering, market research tooling, and cross-platform mobile."
+    />
+    <meta property="og:url" content="https://bagglerock.github.io/" />
+    <meta
+      property="og:image"
+      content="https://bagglerock.github.io/assets/img/og-cover.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Oscar Villalta — Senior Software Engineer portfolio cover"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oscar Villalta | Senior Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack applications, thoughtful APIs, and integrations that connect the pieces."
+    />
+    <meta
+      name="twitter:image"
+      content="https://bagglerock.github.io/assets/img/og-cover.jpg"
+    />
+
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png" />
+
+    <link rel="preload" as="image" href="./assets/img/background.jpeg" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://bagglerock.github.io/#person",
+            "name": "Oscar Villalta",
+            "url": "https://bagglerock.github.io/",
+            "image": "https://bagglerock.github.io/assets/img/og-cover.jpg",
+            "jobTitle": "Senior Software Engineer",
+            "email": "mailto:oscarvillaltanj@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "NJ",
+              "addressCountry": "US"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "KBRA"
+            },
+            "knowsAbout": [
+              "C#",
+              ".NET",
+              "TypeScript",
+              "React",
+              "Remix",
+              "AWS",
+              "PostgreSQL",
+              "REST API design",
+              "Event-driven integrations"
+            ],
+            "sameAs": [
+              "https://github.com/bagglerock",
+              "https://www.linkedin.com/in/oscar-villalta/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://bagglerock.github.io/#website",
+            "url": "https://bagglerock.github.io/",
+            "name": "Oscar Villalta — Portfolio",
+            "description": "Portfolio of Oscar Villalta, a Senior Software Engineer building full-stack applications, APIs, and integrations.",
+            "inLanguage": "en-US",
+            "publisher": { "@id": "https://bagglerock.github.io/#person" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -65,21 +157,15 @@
           </p>
         </div>
         <article class="project featured">
-          <!-- Screenshot slot: replace this project-art div with a project-art div containing an img with descriptive alt text. -->
-          <div
-            class="project-art mastadon-art"
-            role="img"
-            aria-label="Mastadon screenshot placeholder"
-          >
-            <span class="art-label">MASTADON / COMMERCE SYSTEMS</span>
-            <div class="inventory-graphic">
-              <span class="inventory-box box-one"></span
-              ><span class="inventory-box box-two"></span
-              ><span class="inventory-box box-three"></span>
-            </div>
-            <span class="art-caption"
-              >Screenshot coming soon · Inventory &amp; fulfillment</span
-            >
+          <div class="project-art mastadon-art">
+            <img
+              src="./assets/img/websites/mastadon.webp"
+              alt="Mastadon stock detail screen showing the listing workflow steps — stock ready, prepare listing, review and list, listed — above quantity, status, condition, shelf location and cost basis for an inventory item."
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="980"
+            />
           </div>
           <div class="project-body">
             <p class="eyebrow">01 — Marketplace engineering</p>
@@ -113,33 +199,15 @@
         </article>
         <div class="project-grid">
           <article class="project">
-            <!-- Screenshot slot: replace this project-art div with a project-art div containing an img with descriptive alt text. -->
-            <div
-              class="project-art stock-art"
-              role="img"
-              aria-label="Stock Lab screenshot placeholder"
-            >
-              <span class="art-label">STOCK LAB / MARKET RESEARCH</span
-              ><svg viewBox="0 0 600 200" fill="none">
-                <path
-                  d="M0 160H600M0 100H600M0 40H600"
-                  stroke="currentColor"
-                  opacity=".12"
-                />
-                <path
-                  d="M0 155L45 148L85 165L130 120L170 133L210 85L250 108L285 62L325 81L370 42L410 65L455 25L500 47L550 10L600 20"
-                  stroke="currentColor"
-                  stroke-width="3"
-                />
-                <path
-                  d="M0 170L60 158L120 165L180 145L240 152L300 120L360 135L420 105L480 114L540 85L600 95"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  opacity=".35"
-                /></svg
-              ><span class="art-caption"
-                >Screenshot coming soon · Market research</span
-              >
+            <div class="project-art stock-art">
+              <img
+                src="./assets/img/websites/stock-lab.webp"
+                alt="Stock Lab Opportunity Radar screen ranking an unusual market observation, with detector tags, summary metrics and a line chart tracking how each detector's strength changed over time."
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="1060"
+              />
             </div>
             <div class="project-body">
               <p class="eyebrow">02 — Data &amp; experimentation</p>

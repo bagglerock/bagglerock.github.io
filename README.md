@@ -12,9 +12,11 @@ No dependency installation or build step is required.
 - `index.html`: bio, experience, projects, links, and logo gallery.
 - `assets/css/style.css`: responsive layout and CSS project illustrations.
 - `assets/js/app.js`: optional footer year enhancement.
-- `assets/img/`: original background, logos, and historical project images.
+- `assets/img/`: original background, logos, historical project images, and the social share image (`og-cover.jpg`).
+- `assets/img/websites/`: project screenshots used by the featured work cards.
+- `robots.txt`, `sitemap.xml`, `favicon.ico`: search and browser metadata.
 
-The featured project illustrations are abstract visuals, not application screenshots or market data. Private projects intentionally have no public source/demo buttons. Add verified public links when available.
+Mastadon and Stock Lab use real screenshots captured from the running applications against seeded demo data — no customer, account, or live market data appears in them. Workout Logger Universal still uses an abstract placeholder because it is an iOS/Android app that cannot be rendered in a Linux environment. Private projects intentionally have no public source/demo buttons. Add verified public links when available.
 
 ## Hosting
 
