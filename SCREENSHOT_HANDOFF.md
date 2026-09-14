@@ -9,8 +9,9 @@ The portfolio remains a static HTML/CSS site hosted on GitHub Pages. No React mi
 | Mastadon                 | Done — real app screenshot      | `assets/img/websites/mastadon.webp`       |
 | Stock Lab (`stocks`)     | Done — real app screenshot      | `assets/img/websites/stock-lab.webp`      |
 | Workout Logger Universal | Still a placeholder             | —                                         |
+| NJ Pacific Deals (`storefront`) | Done — live-site screenshot | `assets/img/websites/nj-pacific-deals.webp` |
 
-Both captured screenshots come from the applications actually running against seeded demo data. No credentials, account identifiers, customer details, or private financial information appear in them. The Stock Lab market history is synthetic demo data generated for the capture; the anomalies, detector output, and chart were produced by Stock Lab's own scanner from that data, not hand-drawn.
+The Mastadon and Stock Lab screenshots come from the applications actually running against seeded demo data. The NJ Pacific Deals screenshot is the deployed storefront at https://njpacificdeals.com/, captured at 1600x1000 with Playwright; its listings are real and public on eBay, and the shop view is filtered to Shoes so the grid reads well at card size. No credentials, account identifiers, customer details, or private financial information appear in any of them. The Stock Lab market history is synthetic demo data generated for the capture; the anomalies, detector output, and chart were produced by Stock Lab's own scanner from that data, not hand-drawn.
 
 ## Remaining: Workout Logger Universal
 
