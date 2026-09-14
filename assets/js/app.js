@@ -1,59 +1,88 @@
-(function() {
-  const navResponsive = () => {
-    let heroNav = document.getElementById("hero-nav");
-    if (heroNav.className === "hero-nav") {
-      heroNav.className += " responsive";
-    } else {
-      heroNav.className = "hero-nav";
-    }
-  };
+// The entire portfolio stays readable and navigable without JavaScript.
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
 
-  const stickyNavResponsive = () => {
-    let stickyNav = document.getElementById("sticky-nav");
-    if (stickyNav.className === "sticky-nav") {
-      stickyNav.className += " responsive";
-    } else {
-      stickyNav.className = "sticky-nav";
-    }
-  };
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+let cleanupMotion = () => {};
+function configureMotion() {
+  cleanupMotion();
+  if (motionPreference.matches) return;
 
-  // define all elements with className link
-  const link = document.getElementsByClassName("link");
-
-  // loop through all the link class and set an eventlistener that will close the nav bar when it is responsive after a button with className link is clicked
-  for (let i = 0; i < link.length; i++) {
-    link[i].addEventListener("click", e => {
-      if (e.target.className === "link") {
-        const sticky = document.getElementById("sticky-nav");
-        const hero = document.getElementById("hero-nav");
-        sticky.className = "sticky-nav";
-        hero.className = "hero-nav";
+  const revealed = document.querySelectorAll(
+    ".section-heading, .project, .about-intro, .experience-row, .logo-grid",
+  );
+  let observer;
+  if ("IntersectionObserver" in window) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06 },
+    );
+    revealed.forEach((element) => {
+      // Do not hide elements already visible, including restored scroll positions.
+      if (element.getBoundingClientRect().top > window.innerHeight) {
+        element.classList.add("reveal");
+        observer.observe(element);
       }
     });
   }
 
-  document.getElementById("icon").addEventListener("click", () => {
-    navResponsive();
-  });
+  const hero = document.querySelector(".hero");
+  let frame = 0;
+  function updateHero() {
+    frame = 0;
+    const offset = Math.min(window.scrollY, hero.offsetHeight);
+    hero.style.setProperty("--drift", `${offset * 0.18}px`);
+  }
+  function onScroll() {
+    if (!frame) frame = requestAnimationFrame(updateHero);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  updateHero();
 
-  document.getElementById("sticky-icon").addEventListener("click", () => {
-    stickyNavResponsive();
-  });
-
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-
-    let windowHeight = window.innerHeight * 0.05;
-
-    if (scrollPosition > windowHeight) {
-      document.getElementById("sticky-nav").style.display = "block";
-    } else {
-      document.getElementById("sticky-nav").style.display = "none";
-    }
-
-    if (scrollPosition > 600) {
-      document.getElementById("about").style.transform = "translateX(0)";
-      document.getElementById("about").style.opacity = "1";
-    }
-  });
-})();
+  const listeners = [];
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    document.querySelectorAll(".project-art").forEach((art) => {
+      function move(event) {
+        const rect = art.getBoundingClientRect();
+        art.style.setProperty(
+          "--tilt-x",
+          `${((event.clientX - rect.left - rect.width / 2) / rect.width) * 8}deg`,
+        );
+        art.style.setProperty(
+          "--tilt-y",
+          `${(-(event.clientY - rect.top - rect.height / 2) / rect.height) * 8}deg`,
+        );
+      }
+      function reset() {
+        art.style.setProperty("--tilt-x", "0deg");
+        art.style.setProperty("--tilt-y", "0deg");
+      }
+      art.addEventListener("pointermove", move);
+      art.addEventListener("pointerleave", reset);
+      listeners.push(() => {
+        art.removeEventListener("pointermove", move);
+        art.removeEventListener("pointerleave", reset);
+        reset();
+      });
+    });
+  }
+  cleanupMotion = () => {
+    observer?.disconnect();
+    revealed.forEach((element) =>
+      element.classList.remove("reveal", "is-visible"),
+    );
+    window.removeEventListener("scroll", onScroll);
+    cancelAnimationFrame(frame);
+    hero.style.removeProperty("--drift");
+    listeners.forEach((cleanup) => cleanup());
+  };
+}
+configureMotion();
+motionPreference.addEventListener("change", configureMotion);
