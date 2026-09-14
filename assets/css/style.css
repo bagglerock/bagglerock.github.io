@@ -323,7 +323,7 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center top;
+  object-position: center;
   border-radius: 6px;
 }
 .mastadon-art {
@@ -563,6 +563,14 @@ footer {
     padding-right: calc((100% - 1200px) / 2);
   }
 }
+/* The hero card splits left/right only while both halves stay comfortable.
+   Narrower than this its text column runs tall and stretched the art panel
+   far past its screenshot. */
+@media (max-width: 1000px) {
+  .featured {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 800px) {
   .section {
     padding-top: 64px;
@@ -742,6 +750,12 @@ footer {
   padding: 20px;
   align-items: center;
   justify-content: center;
+  /* Derive the panel height from its own width instead of a fixed pixel
+     minimum, so every card shows the same art height and no screenshot has to
+     be recropped to match a hard-coded number. A stretched grid item keeps a
+     definite height, so the side-by-side hero ignores this and fills its row. */
+  aspect-ratio: 7 / 5;
+  min-height: 0;
 }
 .reveal {
   opacity: 0;
