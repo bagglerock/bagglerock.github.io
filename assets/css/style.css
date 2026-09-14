@@ -326,16 +326,6 @@ h1 {
   object-position: center top;
   border-radius: 6px;
 }
-.art-label,
-.art-caption {
-  font-size: 0.6rem;
-  letter-spacing: 0.13em;
-  font-weight: 550;
-  z-index: 1;
-}
-.art-caption {
-  letter-spacing: 0.06em;
-}
 .mastadon-art {
   background: #212b39;
   color: #d7bd99;
@@ -390,31 +380,6 @@ h1 {
 .workout-art {
   background: #e8e5ee;
   color: #59436a;
-}
-.workout-graphic {
-  width: 80%;
-  margin: 16px auto;
-  transform: rotate(-5deg);
-}
-.workout-graphic > span {
-  font-size: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 12px 0;
-  border-bottom: 1px solid #59436a33;
-}
-.workout-graphic b {
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  flex: 1;
-}
-.workout-graphic i {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #59436a66;
-  border-radius: 50%;
-  background: #59436a15;
 }
 .storefront-art {
   background: #e7ebe1;
@@ -787,8 +752,7 @@ footer {
   transform: none;
 }
 .inventory-graphic,
-.stock-art svg,
-.workout-graphic {
+.stock-art svg {
   transition: transform 0.3s ease;
   transform: perspective(700px) rotateX(var(--tilt-y, 0deg))
     rotateY(var(--tilt-x, 0deg));
@@ -830,8 +794,7 @@ footer {
   .button:hover,
   .logo-grid figure:hover img,
   .inventory-graphic,
-  .stock-art svg,
-  .workout-graphic {
+  .stock-art svg {
     transform: none !important;
   }
 }
