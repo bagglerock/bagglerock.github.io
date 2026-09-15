@@ -12,7 +12,9 @@ No dependency installation or build step is required.
 - `index.html`: bio, experience, projects, links, and logo gallery.
 - `assets/css/style.css`: responsive layout and CSS project illustrations.
 - `assets/css/storytelling.css`: desktop blue/gold opening, project scenes, and calm closing sections.
-- `assets/js/app.js`: desktop scroll progress, accessible title reveals, motion cleanup, and footer year.
+- `assets/js/app.js`: tablet/desktop scroll progress, accessible title reveals, motion cleanup, and footer year.
+- `assets/js/screens.js`: reversible screen layout, logo carousel controls, and career tabs at 768px+.
+- `assets/css/screens.css`: screen stops, responsive finale, and subtle background curves.
 - `assets/img/`: original background, logos, historical project images, and the social share image (`og-cover.jpg`).
 - `assets/img/websites/`: project screenshots used by the featured work cards.
 - `robots.txt`, `sitemap.xml`, `favicon.ico`: search and browser metadata.
@@ -33,7 +35,7 @@ Preview desktop and mobile widths; check anchor navigation, keyboard focus, the 
 
 At 1100px and wider, the opening uses blue, gold, white, and CSS curves instead of the hero photograph. Project motion runs at all desktop heights. Scenes use sticky positioning only when the entire card fits below the navigation. Scroll progress drives screenshot depth/slide-in, letter-staggered titles, and upward exits. Scrolling remains native and reversible. Experience and contact settle into spacious closing sections; contact is centered. The creative gallery appears before the closing sections on desktop.
 
-Below 1100px, the existing photo, card grid, section order, and contact layout remain. No project wrapping or scroll handlers are installed. Reduced-motion users receive the complete static page; changing that preference restores the original DOM. JavaScript-disabled visitors retain all content and links. No libraries or build step were added.
+Below 768px, the existing photo, card grid, section order, and contact layout remain. No project wrapping or scroll handlers are installed. Between 768px and 1099px, the original photo opening leads into the tablet screen layout. Reduced-motion users receive the complete static page; changing that preference restores the original DOM. JavaScript-disabled visitors retain all content and links. No libraries or build step were added.
 
 Preview checklist for this motion pass:
 - Desktop at 1440×900: scroll through all five projects, pause on titles, reverse direction, and check that screenshots remain fully visible.
@@ -48,3 +50,11 @@ Preview checklist for this motion pass:
 Verified in headless Chromium at 1440×700: all five project reveals, increasing and reversing scroll progress, pinned upward exit, centered contact, and live reduced-motion toggling. Also checked 390×844: original mobile photograph, no story wrappers, and no horizontal overflow. No JavaScript page errors. Visually reviewed opening, mid-reveal, settled project, contact, and mobile screenshots.
 
 The old 760px minimum-height activation gate was removed: height now controls only whether individual cards can pin. Versioned script and motion stylesheet URLs ensure browsers request this fix after deployment. The hero curve is blue and moved right to separate it from the gold headline.
+
+## Screen chapters and logo carousel
+
+Tablet and desktop layouts (768px+) show Earlier work, the creative carousel, and a combined career/contact finale as separate viewport-sized chapters. Native proximity scroll snapping and bounded sticky containers let each screen settle into place without intercepting wheel or touch events. Short or zoomed windows allow content to grow and scroll rather than clipping it. The final screen includes the footer and uses Experience, Background, and Skills & education tabs to keep all existing content available at readable sizes.
+
+The carousel advances left to right every three seconds, highlights the center logo, pauses on hover/focus or when offscreen, and offers previous/next, pause/play, and tap-to-enlarge controls. Keyboard focus brings a logo to center. Reduced motion disables autoplay by default. Background tabs implement arrow/Home/End navigation. Shrinking below 768px restores the original DOM, including the earlier-work disclosure and separate about/contact sections.
+
+Verified in Chromium at 1440×900, 1440×700, 1024×768, 820×1180, and phone width 390×844. Checks cover carousel autoplay and hover pause, manual selection, keyboard tabs, live phone-layout restoration, reduced motion, no horizontal overflow/page errors, native About/Contact anchor navigation, all finale tabs fitting at 1440×700, and content with JavaScript disabled. Opening, earlier-work, carousel, and finale screenshots were visually reviewed across desktop and tablet layouts.
