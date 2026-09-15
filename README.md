@@ -31,14 +31,20 @@ Preview desktop and mobile widths; check anchor navigation, keyboard focus, the 
 
 ## Desktop storytelling
 
-At 1100px and wider, the opening uses blue, gold, white, and CSS curves instead of the hero photograph. Project scenes use sticky positioning only at heights of at least 760px and only when the entire card fits below the navigation. Scroll progress drives screenshot depth/slide-in, letter-staggered titles, and upward exits. Scrolling remains native and reversible. Experience and contact settle into spacious closing sections; contact is centered. The creative gallery appears before the closing sections on desktop.
+At 1100px and wider, the opening uses blue, gold, white, and CSS curves instead of the hero photograph. Project motion runs at all desktop heights. Scenes use sticky positioning only when the entire card fits below the navigation. Scroll progress drives screenshot depth/slide-in, letter-staggered titles, and upward exits. Scrolling remains native and reversible. Experience and contact settle into spacious closing sections; contact is centered. The creative gallery appears before the closing sections on desktop.
 
 Below 1100px, the existing photo, card grid, section order, and contact layout remain. No project wrapping or scroll handlers are installed. Reduced-motion users receive the complete static page; changing that preference restores the original DOM. JavaScript-disabled visitors retain all content and links. No libraries or build step were added.
 
-Preview checklist for this motion pass (browser download was unavailable in the editing environment):
+Preview checklist for this motion pass:
 - Desktop at 1440×900: scroll through all five projects, pause on titles, reverse direction, and check that screenshots remain fully visible.
 - Keyboard: navigate directly to Work/About/Contact and tab to the storefront link during a reveal.
 - Resize to a short window and zoom to 200%: cards that no longer fit should unpin.
 - Mobile at 390px and tablet at 820px: compare with the original layout and check for horizontal overflow.
 - Toggle reduced motion while halfway down the page; verify all content remains readable.
 - Disable JavaScript and confirm the complete portfolio remains available.
+
+### Motion fix verification
+
+Verified in headless Chromium at 1440×700: all five project reveals, increasing and reversing scroll progress, pinned upward exit, centered contact, and live reduced-motion toggling. Also checked 390×844: original mobile photograph, no story wrappers, and no horizontal overflow. No JavaScript page errors. Visually reviewed opening, mid-reveal, settled project, contact, and mobile screenshots.
+
+The old 760px minimum-height activation gate was removed: height now controls only whether individual cards can pin. Versioned script and motion stylesheet URLs ensure browsers request this fix after deployment. The hero curve is blue and moved right to separate it from the gold headline.
