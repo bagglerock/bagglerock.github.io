@@ -1,5 +1,9 @@
 # Oscar Villalta — Portfolio
 
+## Public project labels
+
+The portfolio uses descriptive titles: Inventory & Marketplace Manager, Photo Library Cleaner, Market Research Lab, Workout Logger, and Resale Storefront. Existing screenshot filenames, repository links, and section URL identifiers are unchanged for compatibility. `assets/js/ghost-labels.js` measures decorative text with the active font and scales it to its container on resize, font loading, and layout changes rather than clipping long labels.
+
 Personal portfolio at https://bagglerock.github.io/ built with HTML, CSS, and progressive desktop scroll animations.
 
 ## Local preview
