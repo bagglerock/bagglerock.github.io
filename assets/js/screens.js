@@ -116,9 +116,15 @@
     controls.innerHTML = '<button type="button" aria-label="Previous logo">←</button><button type="button" class="carousel-toggle">Pause</button><button type="button" aria-label="Next logo">→</button><span class="carousel-count"></span>';
     grid.after(controls);
     const [previous, toggle, next] = controls.querySelectorAll('button');
+    // Keep the click target stable: rebuilding it on focus can cancel a click
+    // that began on the icon or label before pointerup.
+    toggle.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path data-play d="m9 5 10 7-10 7Z" fill="currentColor"/><path data-pause d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><span>Pause</span>';
+    const toggleLabel = toggle.querySelector('span');
+    const playIcon = toggle.querySelector('[data-play]');
+    const pauseIcon = toggle.querySelector('[data-pause]');
     previous.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     next.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    let active = 0, hovered = false, focused = false, visible = false, paused = reduced.matches;
+    let active = 0, hovered = false, visible = false, paused = reduced.matches;
     let timer;
     function paint() {
       figures.forEach((figure, index) => {
@@ -139,9 +145,12 @@
     }
     function schedule() {
       clearInterval(timer);
-      toggle.innerHTML = `${paused ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z" fill="currentColor"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>'}<span>${paused ? 'Play' : 'Pause'}</span>`;
+      const label = paused ? 'Play' : 'Pause';
+      if (toggleLabel.textContent !== label) toggleLabel.textContent = label;
+      playIcon.style.display = paused ? '' : 'none';
+      pauseIcon.style.display = paused ? 'none' : '';
       toggle.setAttribute('aria-label', paused ? 'Play logo carousel' : 'Pause logo carousel');
-      if (!paused && !hovered && !focused && visible && !document.hidden) {
+      if (!paused && !hovered && visible && !document.hidden) {
         timer = setInterval(() => { active = (active + figures.length - 1) % figures.length; paint(); }, 3000);
       }
     }
@@ -155,14 +164,24 @@
       on(button, 'focus', () => { active = index; paint(); });
       restores.push(() => button.replaceWith(image));
     });
-    on(grid, 'pointerenter', () => { hovered = true; schedule(); });
-    on(grid, 'pointerleave', () => { hovered = false; schedule(); });
-    on(design, 'focusin', () => { focused = true; schedule(); });
-    on(design, 'focusout', event => { if (!design.contains(event.relatedTarget)) { focused = false; schedule(); } });
+    // Touch taps do not represent hover and must not leave playback suspended.
+    on(grid, 'pointerenter', event => { if (event.pointerType !== 'touch') { hovered = true; schedule(); } });
+    on(grid, 'pointerleave', event => { if (event.pointerType !== 'touch') { hovered = false; schedule(); } });
+    // Inspecting a logo pauses until Play is chosen. Focusing the playback
+    // controls themselves must not silently stop the timer.
+    on(grid, 'focusin', () => { paused = true; schedule(); });
     on(document, 'visibilitychange', schedule);
     on(previous, 'click', () => { paused = true; active = (active + figures.length - 1) % figures.length; paint(); schedule(); });
     on(next, 'click', () => { paused = true; active = (active + 1) % figures.length; paint(); schedule(); });
-    on(toggle, 'click', () => { paused = !paused; if (!paused) focused = false; schedule(); });
+    on(toggle, 'click', () => {
+      paused = !paused;
+      if (!paused) {
+        hovered = false;
+        active = (active + figures.length - 1) % figures.length;
+        paint();
+      }
+      schedule();
+    });
     on(reduced, 'change', () => { paused = reduced.matches; schedule(); });
     const visibility = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; schedule(); }, { threshold: 0.2 });
     visibility.observe(grid);
