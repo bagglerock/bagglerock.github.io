@@ -1,0 +1,13 @@
+{
+  "name": "oscar-villalta-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/unit/*.test.js",
+    "test:browser": "playwright test",
+    "check": "npm test && npm run test:browser"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
