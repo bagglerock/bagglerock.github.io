@@ -11,13 +11,14 @@ let cleanupMotion = () => {};
 
 function configureMotion() {
   cleanupMotion();
-  if (motionPreference.matches || !desktopPreference.matches) return;
+  if (motionPreference.matches || !window.portfolioExperience?.enabled) return;
 
-  const desktop = desktopPreference.matches;
+  const desktop = true;
   const restorers = [];
   const scenes = projects.map((project) => {
     const scene = document.createElement("div");
     scene.className = "project-scene";
+    scene.dataset.ghost = project.querySelector("h3").textContent.trim();
     project.before(scene);
     scene.append(project);
     project.classList.add("story-project");
@@ -68,6 +69,7 @@ function configureMotion() {
     }
   }, { threshold: 0.08 });
   calm.forEach((element) => {
+    if (element.classList.contains("logo-carousel")) return;
     if (element.getBoundingClientRect().top > window.innerHeight * 0.92) {
       element.classList.add("calm-reveal");
       observer.observe(element);
@@ -76,13 +78,14 @@ function configureMotion() {
 
   let frame = 0;
   function measure() {
+    const headerHeight = document.querySelector(".site-header").offsetHeight;
     for (const { scene, project } of scenes) {
       const height = project.offsetHeight;
       // Zoom, longer text, or short windows must never trap content in a pin.
-      const pinned = desktop && height <= window.innerHeight - 128;
+      const pinned = desktop && height <= window.innerHeight - headerHeight - 48;
       project.toggleAttribute("data-pinned", pinned);
       scene.classList.toggle("is-pinned", pinned);
-      project.style.setProperty("--pin-top", `${Math.max(100, (window.innerHeight + 80 - height) / 2)}px`);
+      project.style.setProperty("--pin-top", `${Math.max(headerHeight + 20, (window.innerHeight + headerHeight - height) / 2)}px`);
     }
     schedule();
   }
@@ -130,4 +133,6 @@ if ("IntersectionObserver" in window) {
   configureMotion();
   motionPreference.addEventListener("change", configureMotion);
   desktopPreference.addEventListener("change", configureMotion);
+  window.portfolioExperience?.addEventListener("change", configureMotion);
+  window.matchMedia("(max-width: 767px)").addEventListener("change", configureMotion);
 }

@@ -1,0 +1,135 @@
+.view-mode-toggle {
+  margin-left: 20px;
+  border: 1px solid #edbe6655;
+  border-radius: 999px;
+  padding: 7px 11px;
+  color: #edbe66;
+  background: #ffffff08;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: inherit;
+  font-size: 0.67rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.view-mode-toggle:hover { background: #ffffff15; }
+.view-mode-toggle:focus-visible { outline: 2px solid #edbe66; outline-offset: 4px; }
+.site-header nav { margin-left: auto; }
+/* The simple version is also the no-JavaScript/default document. */
+html:not(.experience-enabled) {
+  --ink: #141924;
+  --paper: #f6f5f1;
+  --muted: #626671;
+  --line: #dadbd8;
+  --accent: #e6ad64;
+}
+html:not(.experience-enabled) main { display: block; }
+html:not(.experience-enabled) .desktop-opening { display: none; }
+html:not(.experience-enabled) .hero {
+  min-height: min(850px, calc(100svh - 80px));
+  padding-top: 74px;
+  padding-bottom: 110px;
+}
+html:not(.experience-enabled) .hero::before {
+  inset: -100px 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(90deg, rgba(13,19,31,.95), rgba(18,23,36,.76) 48%, rgba(20,22,32,.26)), url('../img/background.jpeg') center/cover;
+  transform: none;
+}
+html:not(.experience-enabled) .hero::after { display: none; }
+html:not(.experience-enabled) .hero h1 { font-size: clamp(4.5rem,8.8vw,8rem); line-height: .94; letter-spacing: -.065em; }
+html:not(.experience-enabled) .hero h1 br { display: initial; }
+html:not(.experience-enabled) .hero-intro { display: block; }
+html:not(.experience-enabled) .hero .eyebrow { margin-bottom: 26px; }
+html:not(.experience-enabled) .about { background: #eeede8; }
+html:not(.experience-enabled) .about-intro { min-height: 0; }
+html:not(.experience-enabled) .experience { min-height: 0; display: block; }
+html:not(.experience-enabled) .contact { min-height: 0; display: block; text-align: left; }
+html:not(.experience-enabled) .contact::before { display: none; }
+html:not(.experience-enabled) .contact h2 { font-size: clamp(2.6rem,5vw,4.6rem); }
+html:not(.experience-enabled) .contact-links { justify-content: flex-start; }
+@media (max-width: 767px) {
+  .view-mode-toggle { margin-left: 10px; font-size: 0.58rem; padding: 7px 8px; }
+  .site-header nav { gap: 14px; font-size: 0.72rem; }
+  .screen-mode { scroll-padding-top: 68px; }
+  .screen-mode .hero { min-height: calc(100svh - 68px); padding: 42px 24px 85px; }
+  .screen-mode .hero::before { inset: 0; background: radial-gradient(ellipse at 160% 35%, #24528e 0 46%, transparent 46.2%), #102d65; }
+  .screen-mode .hero::after { display: none; }
+  .screen-mode .desktop-opening { display: block; font-size: clamp(2.8rem, 11vw, 4.3rem); line-height: 1.02; font-weight: 650; letter-spacing: -.06em; margin: 22px 0; }
+  .screen-mode .desktop-opening > span { display: block; }
+  .screen-mode .desktop-opening > span:nth-child(2), .screen-mode .opening-dot { color: #edbe66; }
+  .screen-mode .hero h1 { font-size: 1.15rem; line-height: 1.4; letter-spacing: -.02em; }
+  .screen-mode .hero h1 br { display: none; }
+  .screen-mode .hero-intro { display: none; }
+  .screen-mode .hero-detail { font-size: .8rem; }
+  .screen-mode .hero .eyebrow { margin-bottom: 0; }
+  .screen-mode .hero .actions { gap: 22px; }
+  .screen-mode .work { padding-inline: 22px; }
+  .screen-mode .story-project { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .screen-mode .story-project .project-art:has(> img) { aspect-ratio: 1.75; padding: 12px; }
+  .screen-mode .story-project .project-body { padding: 0; }
+  .screen-mode .story-project h3 { font-size: 1.65rem; margin-bottom: 10px; }
+  .screen-mode .project-body .eyebrow { margin-bottom: 10px; }
+  .screen-mode .project-body > p:not(.eyebrow):not(.tech), .screen-mode .project-details { font-size: .76rem; line-height: 1.6; }
+  .screen-mode .project-details { margin-block: 12px; }
+  .screen-mode .project-details li + li { margin-top: 5px; }
+  .screen-mode .project-body p + p { margin-top: 10px; }
+  .screen-mode .tech { margin-top: 12px; padding-top: 10px; font-size: .64rem; }
+  .screen-mode .private-label, .screen-mode .project-link { margin-top: 9px; }
+  .screen-mode .chapter { top: 68px; min-height: calc(100svh - 68px); padding: 28px 22px; }
+  .screen-mode .chapter-tall { top: auto; }
+  .screen-mode .chapter-stop { min-height: calc(112svh - 68px); }
+  .screen-mode .chapter-stop:has(.design) { min-height: calc(145svh - 68px); }
+  .screen-mode .final-stop { min-height: calc(100svh - 68px); }
+  .screen-mode .chapter h2 { font-size: 2rem; }
+  .screen-mode .chapter .section-heading { margin-bottom: 20px; }
+  .screen-mode .chapter .section-heading > p { margin-top: 12px; font-size: .76rem; }
+  .screen-mode .archive-screen .earlier-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .screen-mode .archive-screen .earlier-grid article { padding: 18px 14px; min-height: 190px; border-radius: 12px; }
+  .screen-mode .earlier-grid h3 { font-size: .9rem; }
+  .screen-mode .earlier-grid p { font-size: .72rem; }
+  .screen-mode .logo-carousel { height: clamp(240px, 42svh, 350px); }
+  .screen-mode .logo-carousel figure { width: 68vw; max-width: 310px; padding: 20px; }
+  .screen-mode .logo-carousel figure:last-child { grid-column: auto; }
+  .screen-mode .logo-carousel figure:last-child img { max-width: none; }
+  .screen-mode .logo-carousel figcaption { font-size: .7rem; }
+  .screen-mode .carousel-controls { margin-top: 20px; }
+  .screen-mode .chapter::after { font-size: 21vw; bottom: 7%; }
+  .screen-mode .final-grid { display: block; }
+  .screen-mode .career-panel > .eyebrow { font-size: .55rem; }
+  .screen-mode .career-panel > h2 { font-size: 1.75rem; }
+  .screen-mode .career-tabs { gap: 15px; margin-top: 18px; }
+  .screen-mode .career-tabs button { font-size: .67rem; }
+  .screen-mode .career-tabs button:nth-child(3) { max-width: 70px; }
+  .screen-mode .career-panels { min-height: 460px; }
+  .screen-mode .career-tabpanel p { font-size: .73rem; line-height: 1.6; }
+  .screen-mode .career-tabpanel .experience-row > div:first-child { gap: 8px; }
+  .screen-mode .career-tabpanel .experience-row > div:first-child p { font-size: .63rem; white-space: nowrap; }
+  .screen-mode .career-tabpanel h3 { font-size: .9rem; }
+  .screen-mode .career-tabpanel .capabilities { gap: 18px; }
+  .screen-mode .final-screen .contact { padding: 24px 0; }
+  .screen-mode .final-screen .contact h2 { font-size: 2.4rem; }
+  .screen-mode .final-screen .contact .eyebrow { margin-bottom: 25px; }
+  .screen-mode .final-screen footer { flex-direction: row; flex-wrap: wrap; gap: 8px 20px; font-size: .53rem; }
+  .screen-mode .final-screen footer > span:nth-child(2) { display: none; }
+}
+@media (max-width: 800px) {
+  html:not(.experience-enabled) .hero { min-height: 720px; }
+}
+@media (max-width: 540px) {
+  html:not(.experience-enabled) .hero { min-height: 690px; padding-top: 56px; }
+  html:not(.experience-enabled) .hero h1 { font-size: 5rem; }
+}
+
+@media (max-width: 360px) {
+  .site-header { padding-inline: 16px; }
+  .site-header nav { gap: 9px; font-size: .68rem; }
+  .view-mode-toggle { padding: 6px; font-size: .55rem; margin-left: 8px; }
+  .screen-mode .career-tabs { gap: 10px; }
+}
+@media (max-width: 767px) {
+  .screen-mode .final-screen::after { font-size: 19vw; }
+}
