@@ -133,3 +133,9 @@ html:not(.experience-enabled) .contact-links { justify-content: flex-start; }
 @media (max-width: 767px) {
   .screen-mode .final-screen::after { font-size: 19vw; }
 }
+/* The same measured fit applies to projects and every closing chapter. */
+.screen-mode .chapter::after,
+.screen-mode .final-screen::after,
+.screen-mode .project-scene::before {
+  font-size: var(--ghost-fit, 6vw);
+}
