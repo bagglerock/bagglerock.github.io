@@ -503,7 +503,9 @@ summary span span {
 }
 .capabilities {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Fluid rather than a fixed 3, so adding a capability column never leaves an
+     orphan on a second row. */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 30px;
   border-top: 1px solid #cdcfca;
   padding-top: 30px;
