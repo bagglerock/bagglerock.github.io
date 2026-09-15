@@ -1,5 +1,5 @@
 /* Tablet/desktop chapters. Nothing here changes the ordinary phone layout. */
-@media (min-width: 768px) {
+@media all {
   .screen-mode {
     --ink: #102d65;
     --paper: #fffefa;
@@ -198,7 +198,7 @@
   .screen-mode .final-screen .contact h2 br { display: contents; }
   .screen-mode .final-screen .contact h2 br::after { content: " "; }
 }
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .screen-mode .career-tabpanel { animation: tab-arrive 350ms ease both; }
   @keyframes tab-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }
@@ -215,7 +215,86 @@
   .screen-mode .desktop-opening { font-size: clamp(3.8rem, 11.5svh, 6.5rem); margin: 20px 0 24px; }
   .screen-mode .hero .actions { margin-top: 22px; }
 }
-@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: no-preference) {
   .screen-mode .chapter-arrival { opacity: 0; transform: translateY(24px) scale(0.985); transition: opacity 1s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
   .screen-mode .chapter-arrived, .screen-mode .chapter-arrival:focus-within { opacity: 1; transform: none; }
+}
+/* A quiet chapter marker and a compact, branded control dock. */
+@media all {
+  .screen-mode .chapter { scroll-snap-align: none; scroll-snap-stop: normal; }
+  .screen-mode .chapter-stop:has(.design) { min-height: calc(155svh - 80px); }
+  .screen-mode .chapter::after {
+    content: attr(data-ghost);
+    position: absolute;
+    left: 5vw;
+    bottom: 3%;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: -1;
+    color: #102d6507;
+    font-size: clamp(5rem, 13vw, 15rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.065em;
+  }
+  .screen-mode .final-screen::after { color: #ffffff06; }
+  .screen-mode .project-scene { position: relative; isolation: isolate; }
+  .screen-mode .project-scene::before {
+    content: attr(data-ghost);
+    position: absolute;
+    top: 5%;
+    left: 0;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: -1;
+    text-transform: uppercase;
+    color: #102d6507;
+    font-size: clamp(4rem, 10vw, 12rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+  }
+  .screen-mode .carousel-controls {
+    width: max-content;
+    max-width: 100%;
+    margin: 18px auto 0;
+    padding: 8px 12px;
+    gap: 8px;
+    border: 1px solid #edbe6640;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #173b79, #102d65);
+    box-shadow: 0 12px 30px -14px #102d6580, inset 0 1px 0 #ffffff14;
+  }
+  .screen-mode .carousel-controls button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    color: #fffefa;
+    background: #ffffff08;
+    border-color: transparent;
+    transition: background 180ms, transform 180ms, box-shadow 180ms;
+  }
+  .screen-mode .carousel-controls svg { width: 22px; height: 22px; }
+  .screen-mode .carousel-controls .carousel-toggle {
+    min-width: 100px;
+    padding-inline: 15px;
+    font-weight: 650;
+    color: #102d65;
+    background: linear-gradient(135deg, #f5d28c, #edbe66);
+    box-shadow: 0 3px 12px #00000018;
+  }
+  .screen-mode .carousel-controls button:hover { background: #ffffff18; transform: translateY(-1px); }
+  .screen-mode .carousel-controls .carousel-toggle:hover { background: #f8d99b; }
+  .screen-mode .carousel-controls button:active { transform: scale(0.96); }
+  .screen-mode .carousel-count { color: #d3def0; padding: 0 8px; font-variant-numeric: tabular-nums; }
+  .screen-mode .logo-carousel { opacity: 1; transform: none; }
+}
+@media print {
+  .screen-mode .chapter-arrival { opacity: 1; transform: none; }
+  .screen-mode .chapter-stop { min-height: 0 !important; }
 }

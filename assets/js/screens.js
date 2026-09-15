@@ -1,11 +1,12 @@
 // Screen-sized chapters are an enhancement for tablets and desktops only.
 (() => {
-  const wide = matchMedia('(min-width: 768px)');
+  const phone = matchMedia('(max-width: 767px)');
+  const mode = window.portfolioExperience;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let teardown = () => {};
   function configure() {
     teardown();
-    if (!wide.matches) return;
+    if (!mode?.enabled) return;
     const restores = [];
     const events = new AbortController();
     const on = (node, type, listener) => node.addEventListener(type, listener, { signal: events.signal });
@@ -24,6 +25,7 @@
     const archive = document.createElement('section');
     archive.className = 'chapter archive-screen';
     archive.id = 'earlier';
+    archive.dataset.ghost = 'EARLY WORK';
     archive.setAttribute('aria-labelledby', 'earlier-title');
     archive.innerHTML = '<div class="chapter-inner"><div class="section-heading"><div><p class="eyebrow">02 / Earlier work</p><h2 id="earlier-title">Where it all started.</h2></div><p>Small experiments. Real lessons.<br>The projects that started the journey.</p></div></div>';
     document.querySelector('.work').after(archive);
@@ -33,6 +35,7 @@
     restores.push(() => { earlier.hidden = oldEarlierHidden; });
 
     design.classList.add('chapter');
+    design.dataset.ghost = 'DESIGN';
     // Put the visual sequence in the DOM too, so keyboard and reading order agree.
     const designMarker = document.createComment('design position');
     design.before(designMarker);
@@ -41,16 +44,19 @@
 
     const finale = document.createElement('section');
     finale.className = 'chapter final-screen';
+    finale.dataset.ghost = 'CONNECT';
     finale.setAttribute('aria-label', 'Experience and contact');
     finale.innerHTML = '<div class="final-grid"><div class="career-panel"><p class="eyebrow">04 / The person behind the projects</p><h2>Built on experience.<br>Ready for what’s next.</h2><div class="career-tabs" role="tablist" aria-label="Professional background"></div><div class="career-panels"></div></div></div>';
     main.append(finale);
     const career = finale.querySelector('.career-panels');
     const tablist = finale.querySelector('.career-tabs');
+    const mobile = phone.matches;
     const groups = [
       ['Experience', [about.querySelector('.experience')]],
       ['Background', [about.querySelector('.about-intro')]],
       ['Skills & education', [about.querySelector('.capabilities'), about.querySelector('.education')]],
     ];
+    if (mobile) groups.push(['Contact', [contact]]);
     const tabs = [];
     const panels = [];
     function select(index, focus = false) {
@@ -86,13 +92,19 @@
     // Preserve the existing #about anchor by keeping its original section.
     move(about, finale.querySelector('.career-panel'));
     about.classList.add('about-anchor');
-    move(contact, finale.querySelector('.final-grid'));
+    if (!mobile) move(contact, finale.querySelector('.final-grid'));
     move(footer, finale);
     const jumpAbout = () => {
       if (location.hash === '#about') select(0);
+      if (mobile && location.hash === '#contact') select(3);
     };
     on(window, 'hashchange', jumpAbout);
     on(document.querySelector('nav a[href="#about"]'), 'click', () => select(0));
+    on(document.querySelector('nav a[href="#contact"]'), 'click', () => { if (mobile) select(3); });
+    on(window, 'portfolio-section', event => {
+      if (event.detail === 'contact' && mobile) select(3);
+      if (event.detail === 'experience') select(0);
+    });
 
     const grid = design.querySelector('.logo-grid');
     const figures = [...grid.querySelectorAll('figure')];
@@ -104,31 +116,30 @@
     controls.innerHTML = '<button type="button" aria-label="Previous logo">←</button><button type="button" class="carousel-toggle">Pause</button><button type="button" aria-label="Next logo">→</button><span class="carousel-count"></span>';
     grid.after(controls);
     const [previous, toggle, next] = controls.querySelectorAll('button');
+    previous.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6M8 12h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    next.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6M16 12H4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     let active = 0, hovered = false, focused = false, visible = false, paused = reduced.matches;
     let timer;
-    const pending = new Set();
     function paint() {
       figures.forEach((figure, index) => {
         let slot = (index - active + figures.length) % figures.length;
         if (slot > figures.length / 2) slot -= figures.length;
         const old = Number(figure.style.getPropertyValue('--slot'));
-        if (Math.abs(old - slot) > 2) {
-          figure.classList.add('carousel-wrap');
-          const id = requestAnimationFrame(() => {
-            const nextId = requestAnimationFrame(() => { figure.classList.remove('carousel-wrap'); pending.delete(nextId); });
-            pending.add(nextId); pending.delete(id);
-          }); pending.add(id);
-        }
+        if (Math.abs(old - slot) > 2) figure.classList.add('carousel-wrap');
         figure.style.setProperty('--slot', slot);
         figure.classList.toggle('carousel-selected', slot === 0);
         figure.classList.toggle('carousel-distant', Math.abs(slot) > 1);
         figure.querySelector('button').setAttribute('aria-pressed', String(slot === 0));
       });
+      // Commit the invisible edge-to-edge reposition before allowing motion.
+      // This avoids a wrapped card sweeping or flashing through the center.
+      void grid.offsetWidth;
+      figures.forEach(figure => figure.classList.remove('carousel-wrap'));
       controls.querySelector('.carousel-count').textContent = `${active + 1} / ${figures.length}`;
     }
     function schedule() {
       clearInterval(timer);
-      toggle.textContent = paused ? 'Play' : 'Pause';
+      toggle.innerHTML = `${paused ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 10 7-10 7Z" fill="currentColor"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>'}<span>${paused ? 'Play' : 'Pause'}</span>`;
       toggle.setAttribute('aria-label', paused ? 'Play logo carousel' : 'Pause logo carousel');
       if (!paused && !hovered && !focused && visible && !document.hidden) {
         timer = setInterval(() => { active = (active + figures.length - 1) % figures.length; paint(); }, 3000);
@@ -175,13 +186,12 @@
       chapter.before(stop); stop.append(chapter);
       return stop;
     });
-    const fit = () => chapters.forEach(chapter => chapter.classList.toggle('chapter-tall', chapter.scrollHeight > innerHeight - 79));
+    const fit = () => chapters.forEach(chapter => chapter.classList.toggle('chapter-tall', chapter.scrollHeight > innerHeight - document.querySelector('.site-header').offsetHeight + 1));
     const sizing = new ResizeObserver(fit);
     chapters.forEach(chapter => sizing.observe(chapter));
     on(window, 'resize', fit); fit();
     teardown = () => {
       events.abort(); clearInterval(timer); visibility.disconnect(); sizing.disconnect(); arrivalObserver.disconnect();
-      pending.forEach(cancelAnimationFrame);
       document.documentElement.classList.remove('screen-mode');
       about.classList.remove('about-anchor');
       figures.forEach(figure => {
@@ -191,6 +201,7 @@
       grid.classList.remove('logo-carousel');
       ['role', 'aria-roledescription', 'aria-label'].forEach(attr => grid.removeAttribute(attr));
       design.classList.remove('chapter', 'chapter-tall');
+      delete design.dataset.ghost;
       controls.remove();
       stops.forEach(stop => stop.replaceWith(stop.firstElementChild));
       restores.reverse().forEach(restore => restore());
@@ -198,6 +209,7 @@
     };
   }
   if ('IntersectionObserver' in window && 'ResizeObserver' in window) {
-    configure(); wide.addEventListener('change', configure);
+    configure(); phone.addEventListener('change', configure);
+    mode?.addEventListener('change', configure);
   }
 })();
