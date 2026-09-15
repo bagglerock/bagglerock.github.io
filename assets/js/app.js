@@ -3,7 +3,7 @@ const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-const desktopPreference = window.matchMedia("(min-width: 1100px) and (min-height: 760px)");
+const desktopPreference = window.matchMedia("(min-width: 1100px)");
 const projects = [...document.querySelectorAll(".work > .project, .project-grid > .project")];
 const hero = document.querySelector(".hero");
 const clamp = (value) => Math.min(1, Math.max(0, value));
