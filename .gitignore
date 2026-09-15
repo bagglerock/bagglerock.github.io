@@ -19,3 +19,6 @@ server/yarn.lock
 client/yarn.lock
 resources/
 resources
+
+test-results/
+playwright-report/
