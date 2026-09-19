@@ -73,6 +73,13 @@ export function initSectionNavigation(mode) {
       requestAnimationFrame(() => {
         if (token !== generation) return;
         node.scrollIntoView({ block: "start", behavior: "instant" });
+        if (key === "contact") {
+          // Contact shares a chapter with Experience and may live inside a
+          // scrollable phone tab. Reaching the chapter alone is not enough.
+          const email = document.querySelector("#contact .email-link");
+          email?.focus({ preventScroll: true });
+          email?.scrollIntoView({ block: "nearest", behavior: "instant" });
+        }
         release = setTimeout(() => {
           restoring = false;
         }, 250);
